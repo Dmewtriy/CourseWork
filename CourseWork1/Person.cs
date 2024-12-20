@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CourseWork1
 {
@@ -74,6 +70,11 @@ namespace CourseWork1
             {
                 return patronymic;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{LastName} {FirstName} {Patronymic}";
         }
 
     }

@@ -21,7 +21,7 @@ namespace CourseWork1
 
         public override string ToString()
         {
-            return $"{LastName} {FirstName} {Patronymic} {DateOfBirth} {PassportData.Series} {PassportData.Number}";
+            return $"{base.ToString()} {DateOfBirth} {PassportData.Series} {PassportData.Number}";
         }
 
         public DateTime DateOfBirth
