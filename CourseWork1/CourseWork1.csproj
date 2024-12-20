@@ -46,6 +46,8 @@
     <Compile Include="Client.cs" />
     <Compile Include="CompanyRepresentive.cs" />
     <Compile Include="Excursion.cs" />
+    <Compile Include="Interfaces\IClient.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Passport.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
@@ -54,5 +56,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

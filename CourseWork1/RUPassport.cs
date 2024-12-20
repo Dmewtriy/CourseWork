@@ -2,14 +2,14 @@
 
 namespace CourseWork1
 {
-    public class Passport
+    public class RUPassport : IPassport
     {
         private string series;
         private string number;
         private DateTime issuedDate;
         private string issuedBy;
 
-        public Passport(string series, string number, DateTime issuedDate, string issuedBy)
+        public RUPassport(string series, string number, DateTime issuedDate, string issuedBy)
         {
             Series = series;
             Number = number;

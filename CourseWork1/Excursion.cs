@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CourseWork1
 {
-    public class Excursion
+    public class Excursion : IExcursion
     {
         private string name;
         private string description;

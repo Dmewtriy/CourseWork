@@ -1,8 +1,9 @@
 ﻿using System;
+using CourseWork1.Interfaces;
 
 namespace CourseWork1
 {
-    public class Person
+    public class Person : IPerson
     {
         private string firstName;
         private string lastName;

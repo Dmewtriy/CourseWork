@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace CourseWork1
 {
-    public class CompanyRepresentative : Person
+    public class CompanyRepresentative : Person, ICompanyRepresentative
     {
         private string number;
         private string email;

@@ -3,13 +3,13 @@ using System.IO;
 
 namespace CourseWork1
 {
-    public class Client : Person
+    public class Client : Person, IClient
     {
         private DateTime dateOfBirth;
-        private Passport passportData;
+        private IPassport passportData;
         private string pathToPhoto;
 
-        public Client(string firstName, string lastName, string patronymic, DateTime dateOfBirth, Passport passportData, string pathToPhoto) :
+        public Client(string firstName, string lastName, string patronymic, DateTime dateOfBirth, IPassport passportData, string pathToPhoto) :
             base(firstName, lastName, patronymic)
         {
             DateOfBirth = dateOfBirth;
@@ -41,7 +41,7 @@ namespace CourseWork1
             }
         }
 
-        public Passport PassportData
+        public IPassport PassportData
         {
             set
             {
