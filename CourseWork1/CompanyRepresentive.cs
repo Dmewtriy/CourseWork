@@ -21,6 +21,11 @@ namespace CourseWork1
             return $"{base.ToString()} {number} {email}";
         }
 
+        public string GetName()
+        {
+            return base.ToString();
+        }
+
         public string Number
         {
             set

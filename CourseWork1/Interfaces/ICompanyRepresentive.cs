@@ -6,5 +6,6 @@ namespace CourseWork1
     {
         string Number { get; set; }
         string Email { get; set; }
+        string GetName();
     }
 }
