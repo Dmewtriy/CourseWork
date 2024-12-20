@@ -9,8 +9,6 @@ namespace CourseWork1
         private string number;
         private string email;
 
-        public static readonly string pathToRepresentatives = "..\\..\\..\\company representatives";
-
         public CompanyRepresentative(string firstName, string lastName, string patronymic, string number, string email) : base(firstName, lastName, patronymic)
         {
             Number = number;
@@ -36,7 +34,7 @@ namespace CourseWork1
                 }
                 else
                 {
-                    throw new Exception("Неверный номер телефона");
+                    throw new ArgumentException("Неверный номер телефона");
                 }
             }
             get
@@ -56,7 +54,7 @@ namespace CourseWork1
                 
                 else
                 {
-                    throw new Exception("Неверная почта");
+                    throw new ArgumentException("Неверная почта");
                 }
             }
             get

@@ -25,7 +25,7 @@ namespace CourseWork1
                 }
                 else
                 {
-                    throw new Exception("Неверное имя");
+                    throw new ArgumentException("Неверное имя");
                 }
             }
             get
@@ -44,7 +44,7 @@ namespace CourseWork1
                 }
                 else
                 {
-                    throw new Exception("Неверная фамилия");
+                    throw new ArgumentException("Неверная фамилия");
                 }
             }
             get
@@ -63,7 +63,7 @@ namespace CourseWork1
                 }
                 else
                 {
-                    throw new Exception("Неверное отчество");
+                    throw new ArgumentException("Неверное отчество");
                 }
             }
             get

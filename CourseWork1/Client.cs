@@ -8,8 +8,6 @@ namespace CourseWork1
         private DateTime dateOfBirth;
         private Passport passportData;
         private string pathToPhoto;
-        public static readonly string pathToClients = "..\\..\\..\\clients";
-
 
         public Client(string firstName, string lastName, string patronymic, DateTime dateOfBirth, Passport passportData, string pathToPhoto) :
             base(firstName, lastName, patronymic)
@@ -34,7 +32,7 @@ namespace CourseWork1
                 }
                 else
                 {
-                    throw new Exception("Неверная дата рождения");
+                    throw new ArgumentException("Неверная дата рождения");
                 }
             }
             get
@@ -53,7 +51,7 @@ namespace CourseWork1
                 }
                 else
                 {
-                    throw new Exception("Неверные данные паспорта");
+                    throw new ArgumentException("Неверные данные паспорта");
                 }
             }
             get
@@ -72,7 +70,7 @@ namespace CourseWork1
                 }
                 else
                 {
-                    throw new Exception("Такого файла не существует");
+                    throw new ArgumentException("Такого файла не существует");
                 }
             }
             get

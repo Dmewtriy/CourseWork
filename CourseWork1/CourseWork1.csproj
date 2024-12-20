@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="CompanyRepresentive.cs" />
+    <Compile Include="Excursion.cs" />
     <Compile Include="Passport.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
