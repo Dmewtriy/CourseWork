@@ -10,6 +10,7 @@ namespace CourseWork1
     {
         static void Main()
         {
+            
         }
     }
 }
