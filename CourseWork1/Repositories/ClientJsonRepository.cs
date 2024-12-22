@@ -65,6 +65,7 @@ namespace CourseWork1.Repositories
         {
             IClient client = GetById(id);
             if (client != null) clients.Remove(client);
+            SaveData();
         }
 
         public void Update(IClient client)

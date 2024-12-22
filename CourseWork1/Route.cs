@@ -22,7 +22,7 @@ namespace CourseWork1
 
         public override string ToString()
         {
-            return $"{name} {country} {duration}";
+            return $"{id} {name} {country} {duration}";
         }
 
         public int Id

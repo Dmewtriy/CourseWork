@@ -24,7 +24,7 @@ namespace CourseWork1
 
         public override string ToString()
         {
-            return $"{name} {stayDuration} {hotelName} {hotelClass}";
+            return $"{Id} {Name} {StayDuration} {HotelName} {HotelClass}";
         }
 
         public int Id

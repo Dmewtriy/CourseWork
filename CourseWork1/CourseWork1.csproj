@@ -47,10 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
-    <Compile Include="CompanyRepresentive.cs" />
+    <Compile Include="CompanyRepresentative.cs" />
     <Compile Include="Excursion.cs" />
     <Compile Include="Interfaces\IClient.cs" />
-    <Compile Include="Interfaces\ICompanyRepresentive.cs" />
+    <Compile Include="Interfaces\ICompanyRepresentative.cs" />
     <Compile Include="Interfaces\IExcursion.cs" />
     <Compile Include="Interfaces\IPassport.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
@@ -59,6 +59,7 @@
     <Compile Include="Interfaces\IRoutePoint.cs" />
     <Compile Include="Interfaces\ITrip.cs" />
     <Compile Include="Repositories\ClientJsonRepository.cs" />
+    <Compile Include="Repositories\CompanyRepresentativeJsonRepository.cs" />
     <Compile Include="Route.cs" />
     <Compile Include="RoutePoint.cs" />
     <Compile Include="RUPassport.cs" />
