@@ -70,7 +70,7 @@ namespace CourseWork1
         {
             set
             {
-                if (DateTime.Compare(value, new DateTime(1900, 1, 1)) > 0)
+                if (value != null)
                 {
                     issuedDate = value;
                 }
@@ -89,7 +89,7 @@ namespace CourseWork1
         {
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value))
                 {
                     issuedBy = value;
                 }

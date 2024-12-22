@@ -9,19 +9,37 @@ namespace CourseWork1
 {
     public class Excursion : IExcursion
     {
+        private int id;
         private string name;
         private string description;
         private DateTime startDate;
         private DateTime endDate;
 
-        public Excursion(string name, string description, DateTime startDate, DateTime endDate)
+        public Excursion(int id, string name, string description, DateTime startDate, DateTime endDate)
         {
+            Id = id;
             Name = name;
             Description = description;
             StartDate = startDate;
             EndDate = endDate;
         }
 
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if (value >= 0)
+                {
+                    id = value;
+                }
+                else
+                {
+                    throw new Exception("Неверный id");
+                }
+
+            }
+        }
         public string Name
         {
             set
@@ -64,7 +82,7 @@ namespace CourseWork1
         {
             set
             {
-                if (DateTime.Compare(value, new DateTime(1900, 1, 1)) > 0)
+                if (value != null)
                 {
                     startDate = value;
                 }
@@ -83,7 +101,7 @@ namespace CourseWork1
         {
             set
             {
-                if (DateTime.Compare(value, new DateTime(1900, 1, 1)) > 0 && DateTime.Compare(value, StartDate) > 0)
+                if (value != null && DateTime.Compare(value, StartDate) > 0)
                 {
                     endDate = value;
                 }

@@ -6,6 +6,7 @@ namespace CourseWork
 {
     public class Trip : ITrip
     {
+        private int id;
         private string routeName;
         private ICompanyRepresentative representative;
         private int price;
@@ -20,8 +21,9 @@ namespace CourseWork
             return $"{routeName} {representative.GetName()} {price} {startDate} {endDate} {touristNumber} {penalty}";
         }
 
-        public Trip(string routeName, ICompanyRepresentative representative, int price, DateTime startDate, DateTime endDate, int touristNumber, List<IClient> tourists, int penalty)
+        public Trip(int id, string routeName, ICompanyRepresentative representative, int price, DateTime startDate, DateTime endDate, int touristNumber, List<IClient> tourists, int penalty)
         {
+            Id = id;
             RouteName = routeName;
             Representative = representative;
             Price = price;
@@ -30,6 +32,23 @@ namespace CourseWork
             TouristNumber = touristNumber;
             Tourists = tourists;
             Penalty = penalty;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if (value >= 0)
+                {
+                    id = value;
+                }
+                else
+                {
+                    throw new Exception("Неверный id");
+                }
+
+            }
         }
 
         public string RouteName
@@ -93,7 +112,7 @@ namespace CourseWork
         {
             set
             {
-                if (DateTime.Compare(value, new DateTime(1900, 1, 1)) > 0)
+                if (value != null)
                 {
                     startDate = value;
                 }
@@ -112,7 +131,7 @@ namespace CourseWork
         {
             set
             {
-                if (DateTime.Compare(value, new DateTime(1900, 1, 1)) > 0 && DateTime.Compare(value, StartDate) > 0)
+                if (value != null && DateTime.Compare(value, StartDate) > 0)
                 {
                     endDate = value;
                 }

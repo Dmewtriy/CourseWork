@@ -5,13 +5,15 @@ namespace CourseWork1
 {
     public class Client : Person, IClient
     {
+        private int id;
         private DateTime dateOfBirth;
         private IPassport passportData;
         private string pathToPhoto;
 
-        public Client(string firstName, string lastName, string patronymic, DateTime dateOfBirth, IPassport passportData, string pathToPhoto) :
+        public Client(int id, string firstName, string lastName, string patronymic, DateTime dateOfBirth, IPassport passportData, string pathToPhoto) :
             base(firstName, lastName, patronymic)
         {
+            Id = id;
             DateOfBirth = dateOfBirth;
             PassportData = passportData;
             PathToPhoto = pathToPhoto;
@@ -22,11 +24,28 @@ namespace CourseWork1
             return $"{base.ToString()} {DateOfBirth} {PassportData.Series} {PassportData.Number}";
         }
 
+        public int Id
+        {
+            get { return id; }
+            set 
+            { 
+                if (value >= 0)
+                {
+                    id = value;
+                }
+                else
+                {
+                    throw new Exception("Неверный id");
+                }
+
+            }
+        }
+
         public DateTime DateOfBirth
         {
             set
             {
-                if (DateTime.Compare(value, new DateTime(1900,1,1)) > 0)
+                if (value != null)
                 {
                     dateOfBirth = value;
                 }

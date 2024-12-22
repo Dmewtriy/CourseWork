@@ -5,13 +5,15 @@ namespace CourseWork1
 {
     public class Route : IRoute
     {
+        private int id;
         private string name;
         private string country;
         private int duration; // В днях
         private List<IRoutePoint> points;
 
-        public Route(string name, string country, int duration, List<IRoutePoint> points)
+        public Route(int id, string name, string country, int duration, List<IRoutePoint> points)
         {
+            Id = id;
             Name = name;
             Country = country;
             Duration = duration;
@@ -21,6 +23,23 @@ namespace CourseWork1
         public override string ToString()
         {
             return $"{name} {country} {duration}";
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if (value >= 0)
+                {
+                    id = value;
+                }
+                else
+                {
+                    throw new Exception("Неверный id");
+                }
+
+            }
         }
 
         public string Name

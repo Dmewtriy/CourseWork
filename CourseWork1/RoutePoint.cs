@@ -5,14 +5,16 @@ namespace CourseWork1
 {
     public class RoutePoint : IRoutePoint
     {
+        private int id;
         private string name;
         private int stayDuration; // В днях
         private string hotelName;
         private int hotelClass;
         private List<IExcursion> excursions;
 
-        public RoutePoint(string name, int stayDuration, string hotelName, int hotelClass, List<IExcursion> excursions)
+        public RoutePoint(int id, string name, int stayDuration, string hotelName, int hotelClass, List<IExcursion> excursions)
         {
+            Id = id;
             Name = name;
             StayDuration = stayDuration;
             HotelName = hotelName;
@@ -25,6 +27,22 @@ namespace CourseWork1
             return $"{name} {stayDuration} {hotelName} {hotelClass}";
         }
 
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if (value >= 0)
+                {
+                    id = value;
+                }
+                else
+                {
+                    throw new Exception("Неверный id");
+                }
+
+            }
+        }
         public string Name
         {
             set

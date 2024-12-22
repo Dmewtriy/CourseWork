@@ -6,11 +6,13 @@ namespace CourseWork1
 {
     public class CompanyRepresentative : Person, ICompanyRepresentative
     {
+        private int id;
         private string number;
         private string email;
 
-        public CompanyRepresentative(string firstName, string lastName, string patronymic, string number, string email) : base(firstName, lastName, patronymic)
+        public CompanyRepresentative(int id, string firstName, string lastName, string patronymic, string number, string email) : base(firstName, lastName, patronymic)
         {
+            Id = id;
             Number = number;
             Email = email;
         }
@@ -26,16 +28,30 @@ namespace CourseWork1
             return base.ToString();
         }
 
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if (value >= 0)
+                {
+                    id = value;
+                }
+                else
+                {
+                    throw new Exception("Неверный id");
+                }
+
+            }
+        }
+
         public string Number
         {
             set
             {
                 if (!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value))
                 {
-                    if(value.Length == 12 && value.StartsWith("+7") || value.Length == 11 && value[0] == '8')
-                    {
-                        number = value;
-                    }
+                    number = value;
                 }
                 else
                 {
@@ -52,7 +68,7 @@ namespace CourseWork1
         {
             set
             {
-                if(IsValidEmail(value))
+                if(!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value))
                 {
                     email = value;
                 }
@@ -68,44 +84,5 @@ namespace CourseWork1
             }
         }
 
-        private static bool IsValidEmail(string email) 
-        {
-            if (string.IsNullOrWhiteSpace(email) && string.IsNullOrEmpty(email))
-                return false;
-
-            try
-            {
-                // Normalize the domain
-                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
-                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
-
-                // Examines the domain part of the email and normalizes it.
-                string DomainMapper(Match match)
-                {
-                    // Use IdnMapping class to convert Unicode domain names.
-                    var idn = new IdnMapping();
-
-                    // Pull out and process domain name (throws ArgumentException on invalid)
-                    string domainName = idn.GetAscii(match.Groups[2].Value);
-
-                    return match.Groups[1].Value + domainName;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-
-            try
-            {
-                return Regex.IsMatch(email,
-                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
-                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return false;
-            }
-        }
     }
 }
