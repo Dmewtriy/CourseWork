@@ -7,6 +7,5 @@ namespace CourseWork1
         int Id { get; set; }
         string Number { get; set; }
         string Email { get; set; }
-        string GetName();
     }
 }

@@ -3,17 +3,22 @@ using System.IO;
 
 namespace CourseWork1
 {
-    public class Client : Person, IClient
+    public class Client : IClient
     {
         private int id;
+        private string firstName;
+        private string lastName;
+        private string patronymic;
         private DateTime dateOfBirth;
         private IPassport passportData;
         private string pathToPhoto;
 
-        public Client(int id, string firstName, string lastName, string patronymic, DateTime dateOfBirth, IPassport passportData, string pathToPhoto) :
-            base(firstName, lastName, patronymic)
+        public Client(int id, string firstName, string lastName, string patronymic, DateTime dateOfBirth, IPassport passportData, string pathToPhoto)
         {
             Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            Patronymic = patronymic;
             DateOfBirth = dateOfBirth;
             PassportData = passportData;
             PathToPhoto = pathToPhoto;
@@ -21,7 +26,12 @@ namespace CourseWork1
 
         public override string ToString()
         {
-            return $"{base.ToString()} {DateOfBirth} {PassportData.Series} {PassportData.Number}";
+            return $"{Id} {LastName} {FirstName} {Patronymic} {DateOfBirth.ToShortDateString()} {PassportData.Series} {PassportData.Number}";
+        }
+
+        public string GetName()
+        {
+            return $"{LastName} {FirstName} {Patronymic}";
         }
 
         public int Id
@@ -38,6 +48,63 @@ namespace CourseWork1
                     throw new Exception("Неверный id");
                 }
 
+            }
+        }
+
+        public string FirstName
+        {
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value))
+                {
+                    firstName = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Неверное имя");
+                }
+            }
+            get
+            {
+                return firstName;
+            }
+        }
+
+        public string LastName
+        {
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value))
+                {
+                    lastName = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Неверная фамилия");
+                }
+            }
+            get
+            {
+                return lastName;
+            }
+        }
+
+        public string Patronymic
+        {
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value))
+                {
+                    patronymic = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Неверное отчество");
+                }
+            }
+            get
+            {
+                return patronymic;
             }
         }
 
@@ -97,5 +164,6 @@ namespace CourseWork1
                 return pathToPhoto;
             }
         }
+
     }
 }

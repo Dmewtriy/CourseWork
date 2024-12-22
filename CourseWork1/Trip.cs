@@ -18,7 +18,7 @@ namespace CourseWork
 
         public override string ToString()
         {
-            return $"{routeName} {representative.GetName()} {price} {startDate} {endDate} {touristNumber} {penalty}";
+            return $"{routeName} {representative.GetName()} {price} {startDate.ToShortDateString()} {endDate.ToShortDateString()} {touristNumber} {penalty}";
         }
 
         public Trip(int id, string routeName, ICompanyRepresentative representative, int price, DateTime startDate, DateTime endDate, int touristNumber, List<IClient> tourists, int penalty)

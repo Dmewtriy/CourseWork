@@ -73,7 +73,7 @@ namespace CourseWork1
             }
         }
 
-        public override string ToString()
+        public string GetName()
         {
             return $"{LastName} {FirstName} {Patronymic}";
         }

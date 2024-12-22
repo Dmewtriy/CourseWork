@@ -58,7 +58,7 @@
     <Compile Include="Interfaces\IRoute.cs" />
     <Compile Include="Interfaces\IRoutePoint.cs" />
     <Compile Include="Interfaces\ITrip.cs" />
-    <Compile Include="Repositories\JsonRepository.cs" />
+    <Compile Include="Repositories\ClientJsonRepository.cs" />
     <Compile Include="Route.cs" />
     <Compile Include="RoutePoint.cs" />
     <Compile Include="RUPassport.cs" />
