@@ -64,10 +64,14 @@ namespace CourseWork1.Repositories
             return new Route(id, route.Name, route.Country, route.Duration, route.Points.ToList());
         }
 
-        public void Remove(IRoute route)
+        public bool Remove(IRoute route)
         {
             if(routes.Remove(route))
+            {
                 SaveData();
+                return true;
+            }
+            return false;
         }
 
         public void Update(IRoute route)

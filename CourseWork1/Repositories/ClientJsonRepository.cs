@@ -69,10 +69,14 @@ namespace CourseWork1.Repositories
                 client.PathToPhoto);
         }
 
-        public void Remove(IClient client)
+        public bool Remove(IClient client)
         {
             if (clients.Remove(client))
+            {
                 SaveData();
+                return true;
+            }
+            return false;
         }
 
         public void Update(IClient client)

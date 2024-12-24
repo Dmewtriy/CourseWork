@@ -64,10 +64,14 @@ namespace CourseWork1.Repositories
             return new RoutePoint(id, vp.Name, vp.StayDuration, vp.HotelName, vp.HotelClass, vp.Excursions.ToList());
         }
 
-        public void Remove(IRoutePoint routePoint)
+        public bool Remove(IRoutePoint routePoint)
         {
             if(routePoints.Remove(routePoint))
+            {
                 SaveData();
+                return true;
+            }
+            return false;
         }
 
         public void Update(IRoutePoint routePoint)

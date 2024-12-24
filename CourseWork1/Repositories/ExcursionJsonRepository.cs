@@ -64,10 +64,14 @@ namespace CourseWork1.Repositories
             return new Excursion(id, exc.Name, exc.Description, exc.StartDate, exc.EndDate);
         }
 
-        public void Remove(IExcursion excurison)
+        public bool Remove(IExcursion excurison)
         { 
             if (excursions.Remove(excurison))
+            {
                 SaveData();
+                return true;
+            }
+            return false;
         }
 
         public void Update(IExcursion excursion)

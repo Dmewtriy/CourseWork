@@ -65,10 +65,14 @@ namespace CourseWork1.Repositories
             return new CompanyRepresentative(id, compRepr.FirstName, compRepr.LastName, compRepr.Patronymic, compRepr.Number, compRepr.Email);
         }
 
-        public void Remove(ICompanyRepresentative companyRepresentative)
+        public bool Remove(ICompanyRepresentative companyRepresentative)
         {
             if(companyRepresentatives.Remove(companyRepresentative))
+            {
                 SaveData();
+                return true;
+            }
+            return false;
         }
 
         public void Update(ICompanyRepresentative companyRepresentative)

@@ -69,10 +69,14 @@ namespace CourseWork1.Repositories
                 trip.Price, trip.StartDate, trip.EndDate, trip.TouristNumber, trip.Tourists.ToList(), trip.Penalty);
         }
 
-        public void Remove(ITrip trip)
+        public bool Remove(ITrip trip)
         {
             if(trips.Remove(trip))
+            {
                 SaveData();
+                return true;
+            }
+            return false;
         }
 
         public void Update(ITrip trip)
