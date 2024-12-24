@@ -6,7 +6,7 @@ namespace CourseWork
 {
     public class Trip : ITrip
     {
-        private int id;
+        private long id;
         private string routeName;
         private ICompanyRepresentative representative;
         private int price;
@@ -21,7 +21,7 @@ namespace CourseWork
             return $"{id} {routeName} {representative.GetName()} {price} {startDate.ToShortDateString()} {endDate.ToShortDateString()} {touristNumber} {penalty}";
         }
 
-        public Trip(int id, string routeName, ICompanyRepresentative representative, int price, DateTime startDate, DateTime endDate, int touristNumber, List<IClient> tourists, int penalty)
+        public Trip(long id, string routeName, ICompanyRepresentative representative, int price, DateTime startDate, DateTime endDate, int touristNumber, List<IClient> tourists, int penalty)
         {
             Id = id;
             RouteName = routeName;
@@ -34,7 +34,7 @@ namespace CourseWork
             Penalty = penalty;
         }
 
-        public int Id
+        public long Id
         {
             get { return id; }
             set

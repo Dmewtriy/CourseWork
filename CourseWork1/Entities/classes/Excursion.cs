@@ -9,13 +9,13 @@ namespace CourseWork1
 {
     public class Excursion : IExcursion
     {
-        private int id;
+        private long id;
         private string name;
         private string description;
         private DateTime startDate;
         private DateTime endDate;
 
-        public Excursion(int id, string name, string description, DateTime startDate, DateTime endDate)
+        public Excursion(long id, string name, string description, DateTime startDate, DateTime endDate)
         {
             Id = id;
             Name = name;
@@ -24,7 +24,7 @@ namespace CourseWork1
             EndDate = endDate;
         }
 
-        public int Id
+        public long Id
         {
             get { return id; }
             set

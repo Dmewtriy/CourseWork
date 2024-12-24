@@ -5,13 +5,13 @@ namespace CourseWork1
 {
     public class Route : IRoute
     {
-        private int id;
+        private long id;
         private string name;
         private string country;
         private int duration; // В днях
         private List<IRoutePoint> points;
 
-        public Route(int id, string name, string country, int duration, List<IRoutePoint> points)
+        public Route(long id, string name, string country, int duration, List<IRoutePoint> points)
         {
             Id = id;
             Name = name;
@@ -25,7 +25,7 @@ namespace CourseWork1
             return $"{id} {name} {country} {duration}";
         }
 
-        public int Id
+        public long Id
         {
             get { return id; }
             set

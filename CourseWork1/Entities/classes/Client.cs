@@ -5,7 +5,7 @@ namespace CourseWork1
 {
     public class Client : IClient
     {
-        private int id;
+        private long id;
         private string firstName;
         private string lastName;
         private string patronymic;
@@ -13,7 +13,7 @@ namespace CourseWork1
         private IPassport passportData;
         private string pathToPhoto;
 
-        public Client(int id, string firstName, string lastName, string patronymic, DateTime dateOfBirth, IPassport passportData, string pathToPhoto)
+        public Client(long id, string firstName, string lastName, string patronymic, DateTime dateOfBirth, IPassport passportData, string pathToPhoto)
         {
             Id = id;
             FirstName = firstName;
@@ -34,7 +34,7 @@ namespace CourseWork1
             return $"{LastName} {FirstName} {Patronymic}";
         }
 
-        public int Id
+        public long Id
         {
             get { return id; }
             set 

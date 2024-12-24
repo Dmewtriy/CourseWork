@@ -5,7 +5,7 @@ namespace CourseWork1
 {
     public interface IRoutePoint
     {
-        int Id { get; set; }
+        long Id { get; set; }
         string Name { get; set; }
         int StayDuration { get; set; }
         string HotelName { get; set; }

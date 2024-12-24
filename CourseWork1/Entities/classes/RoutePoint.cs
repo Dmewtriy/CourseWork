@@ -5,14 +5,14 @@ namespace CourseWork1
 {
     public class RoutePoint : IRoutePoint
     {
-        private int id;
+        private long id;
         private string name;
         private int stayDuration; // В днях
         private string hotelName;
         private int hotelClass;
         private List<IExcursion> excursions;
 
-        public RoutePoint(int id, string name, int stayDuration, string hotelName, int hotelClass, List<IExcursion> excursions)
+        public RoutePoint(long id, string name, int stayDuration, string hotelName, int hotelClass, List<IExcursion> excursions)
         {
             Id = id;
             Name = name;
@@ -27,7 +27,7 @@ namespace CourseWork1
             return $"{Id} {Name} {StayDuration} {HotelName} {HotelClass}";
         }
 
-        public int Id
+        public long Id
         {
             get { return id; }
             set

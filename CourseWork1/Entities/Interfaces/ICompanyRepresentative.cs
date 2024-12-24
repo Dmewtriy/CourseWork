@@ -4,7 +4,7 @@ namespace CourseWork1
 {
     public interface ICompanyRepresentative : IPerson
     {
-        int Id { get; set; }
+        long Id { get; set; }
         string Number { get; set; }
         string Email { get; set; }
     }

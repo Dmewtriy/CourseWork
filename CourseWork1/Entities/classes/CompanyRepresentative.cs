@@ -6,14 +6,14 @@ namespace CourseWork1
 {
     public class CompanyRepresentative : ICompanyRepresentative
     {
-        private int id;
+        private long id;
         private string firstName;
         private string lastName;
         private string patronymic;
         private string number;
         private string email;
 
-        public CompanyRepresentative(int id, string firstName, string lastName, string patronymic, string number, string email)
+        public CompanyRepresentative(long id, string firstName, string lastName, string patronymic, string number, string email)
         {
             Id = id;
             FirstName = firstName;
@@ -34,7 +34,7 @@ namespace CourseWork1
             return $"{LastName} {FirstName} {Patronymic}";
         }
 
-        public int Id
+        public long Id
         {
             get { return id; }
             set

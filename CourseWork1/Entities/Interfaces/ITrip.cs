@@ -5,7 +5,7 @@ namespace CourseWork1
 {
     public interface ITrip
     {
-        int Id { get; set; }
+        long Id { get; set; }
         string RouteName { get; set; }
         ICompanyRepresentative Representative { get; set; }
         int Price { get; set; }
