@@ -82,15 +82,8 @@ namespace CourseWork1.Repositories
         public void Update(IClient client)
         {
             IClient existingClient = GetById(client.Id);
-            if (existingClient != null) 
-            {
-                clients[clients.IndexOf(existingClient)] = client;
-                SaveData();
-            }
-            else
-            {
-                throw new Exception("Невозможно обновить клиента, так как он не найден.");
-            }
+            clients[clients.IndexOf(existingClient)] = client;
+            SaveData();
         }
     }
 }
