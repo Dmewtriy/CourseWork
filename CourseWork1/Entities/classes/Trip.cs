@@ -202,5 +202,14 @@ namespace CourseWork
                 return penalty;
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Trip trip)
+            {
+                return trip.Id == Id;
+            }
+            return false;
+        }
     }
 }

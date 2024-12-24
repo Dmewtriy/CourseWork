@@ -137,5 +137,14 @@ namespace CourseWork1
                 return excursions;
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is RoutePoint rp)
+            {
+                return rp.Id == Id;
+            }
+            return false;
+        }
     }
 }

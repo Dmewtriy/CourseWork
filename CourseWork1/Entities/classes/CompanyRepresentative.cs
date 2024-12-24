@@ -147,5 +147,14 @@ namespace CourseWork1
             }
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is CompanyRepresentative compRep)
+            {
+                return compRep.Id == Id;
+            }
+            return false;
+        }
+
     }
 }

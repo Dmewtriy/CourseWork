@@ -117,5 +117,14 @@ namespace CourseWork1
                 return points;
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Route route)
+            {
+                return route.Id == Id;
+            }
+            return false;
+        }
     }
 }

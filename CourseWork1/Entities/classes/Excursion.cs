@@ -115,5 +115,14 @@ namespace CourseWork1
                 return endDate;
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Excursion exc)
+            {
+                return exc.Id == Id;
+            }
+            return false;
+        }
     }
 }

@@ -165,5 +165,14 @@ namespace CourseWork1
             }
         }
 
+        public override bool Equals(object obj)
+        {
+            if(obj is Client client)
+            {
+                return client.Id == Id;
+            }
+            return false;
+        }
+
     }
 }
