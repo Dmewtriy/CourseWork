@@ -25,20 +25,21 @@ namespace CourseWork1.Repositories
         {
             string[] clientFiles = Directory.GetFiles(path);
             string json;
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var clientFile in clientFiles)
             {
                 json = File.ReadAllText(clientFile);
-                clients.Add(JsonConvert.DeserializeObject<IClient>(json));
+                clients.Add(JsonConvert.DeserializeObject<IClient>(json, options));
             }
         }
 
         private void SaveData() 
         {
             string fileName, filePath, json;
-            var options = new JsonSerializerSettings() { Formatting = Formatting.Indented };
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var client in clients) 
             {
-                fileName = $"{client}.json";
+                fileName = $"{client.Id}.json";
                 filePath = path + "\\" + fileName;
                 json = JsonConvert.SerializeObject(client, options);
                 File.WriteAllText(filePath, json);
@@ -58,14 +59,20 @@ namespace CourseWork1.Repositories
 
         public IClient GetById(int id)
         {
-            return clients.FirstOrDefault(c => c.Id == id);
+            var client =  clients.FirstOrDefault(c => c.Id == id);
+            if (client == null)
+                throw new Exception($"Клиент с id {id} не найден");
+            var clientPassport = client.PassportData;
+            return new Client(id, client.FirstName, client.LastName, client.Patronymic, client.DateOfBirth,
+                new RUPassport(clientPassport.Series, clientPassport.Number, clientPassport.IssuedDate,
+                clientPassport.IssuedBy),
+                client.PathToPhoto);
         }
 
-        public void Remove(int id)
+        public void Remove(IClient client)
         {
-            IClient client = GetById(id);
-            if (client != null) clients.Remove(client);
-            SaveData();
+            if (clients.Remove(client))
+                SaveData();
         }
 
         public void Update(IClient client)
@@ -73,9 +80,12 @@ namespace CourseWork1.Repositories
             IClient existingClient = GetById(client.Id);
             if (existingClient != null) 
             {
-                clients.Remove(existingClient);
-                clients.Add(client);
+                clients[clients.IndexOf(existingClient)] = client;
                 SaveData();
+            }
+            else
+            {
+                throw new Exception("Невозможно обновить клиента, так как он не найден.");
             }
         }
     }

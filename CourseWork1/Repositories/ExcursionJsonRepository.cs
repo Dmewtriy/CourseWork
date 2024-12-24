@@ -25,20 +25,21 @@ namespace CourseWork1.Repositories
         {
             string[] excursionFiles = Directory.GetFiles(path);
             string json;
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var excursionFile in excursionFiles)
             {
                 json = File.ReadAllText(excursionFile);
-                excursions.Add(JsonConvert.DeserializeObject<IExcursion>(json));
+                excursions.Add(JsonConvert.DeserializeObject<IExcursion>(json, options));
             }
         }
 
         private void SaveData()
         {
             string fileName, filePath, json;
-            var options = new JsonSerializerSettings() { Formatting = Formatting.Indented };
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var excursion in excursions)
             {
-                fileName = $"{excursion}.json";
+                fileName = $"{excursion.Id}.json";
                 filePath = path + "\\" + fileName;
                 json = JsonConvert.SerializeObject(excursion, options);
                 File.WriteAllText(filePath, json);
@@ -58,14 +59,15 @@ namespace CourseWork1.Repositories
 
         public IExcursion GetById(int id)
         {
-            return excursions.FirstOrDefault(c => c.Id == id);
+            var exc = excursions.FirstOrDefault(c => c.Id == id);
+            if (exc == null) throw new Exception($"Экскурсия с id {id} не найдена");
+            return new Excursion(id, exc.Name, exc.Description, exc.StartDate, exc.EndDate);
         }
 
-        public void Remove(int id)
-        {
-            IExcursion excursion = GetById(id);
-            if (excursion != null) excursions.Remove(excursion);
-            SaveData();
+        public void Remove(IExcursion excurison)
+        { 
+            if (excursions.Remove(excurison))
+                SaveData();
         }
 
         public void Update(IExcursion excursion)
@@ -73,9 +75,12 @@ namespace CourseWork1.Repositories
             IExcursion existingExcursion = GetById(excursion.Id);
             if (existingExcursion != null)
             {
-                excursions.Remove(existingExcursion);
-                excursions.Add(excursion);
+                excursions[excursions.IndexOf(existingExcursion)] = excursion;
                 SaveData();
+            }
+            else
+            {
+                throw new Exception("Невозможно обновить экскурсию, так как она не найдена.");
             }
         }
     }

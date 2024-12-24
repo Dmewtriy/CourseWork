@@ -1,7 +1,9 @@
-﻿using CourseWork1.Interfaces;
+﻿using CourseWork;
+using CourseWork1.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,20 +27,21 @@ namespace CourseWork1.Repositories
         {
             string[] tripFiles = Directory.GetFiles(path);
             string json;
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var tripFile in tripFiles)
             {
                 json = File.ReadAllText(tripFile);
-                trips.Add(JsonConvert.DeserializeObject<ITrip>(json));
+                trips.Add(JsonConvert.DeserializeObject<ITrip>(json, options));
             }
         }
 
         private void SaveData()
         {
             string fileName, filePath, json;
-            var options = new JsonSerializerSettings() { Formatting = Formatting.Indented };
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var trip in trips)
             {
-                fileName = $"{trip}.json";
+                fileName = $"{trip.Id}.json";
                 filePath = path + "\\" + fileName;
                 json = JsonConvert.SerializeObject(trip, options);
                 File.WriteAllText(filePath, json);
@@ -58,14 +61,18 @@ namespace CourseWork1.Repositories
 
         public ITrip GetById(int id)
         {
-            return trips.FirstOrDefault(c => c.Id == id);
+            var trip = trips.FirstOrDefault(c => c.Id == id);
+            if (trip == null) throw new Exception($"Поездка с id {id} не найдена");
+            var cr = trip.Representative;
+            return new Trip(id, trip.RouteName,
+                new CompanyRepresentative(cr.Id, cr.FirstName, cr.LastName, cr.Patronymic, cr.Number, cr.Email),
+                trip.Price, trip.StartDate, trip.EndDate, trip.TouristNumber, trip.Tourists.ToList(), trip.Penalty);
         }
 
-        public void Remove(int id)
+        public void Remove(ITrip trip)
         {
-            ITrip trip = GetById(id);
-            if (trip != null) trips.Remove(trip);
-            SaveData();
+            if(trips.Remove(trip))
+                SaveData();
         }
 
         public void Update(ITrip trip)
@@ -73,9 +80,12 @@ namespace CourseWork1.Repositories
             ITrip existingTrip = GetById(trip.Id);
             if (existingTrip != null)
             {
-                trips.Remove(existingTrip);
-                trips.Add(trip);
+                trips[trips.IndexOf(existingTrip)] = trip;
                 SaveData();
+            }
+            else
+            {
+                throw new Exception("Невозможно обновить поездку, так как она не найдена.");
             }
         }
     }

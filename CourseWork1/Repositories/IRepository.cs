@@ -4,9 +4,9 @@ namespace CourseWork1.Interfaces
 {
     public interface IRepository<T>
     {
-        void Add(T client);
-        void Remove(int id);
-        void Update(T client);
+        void Add(T item);
+        void Remove(T item);
+        void Update(T item);
         T GetById(int id);
         IEnumerable<T> GetAll();
     }

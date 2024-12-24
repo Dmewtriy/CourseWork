@@ -25,20 +25,21 @@ namespace CourseWork1.Repositories
         {
             string[] routePointFiles = Directory.GetFiles(path);
             string json;
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var routePointFile in routePointFiles)
             {
                 json = File.ReadAllText(routePointFile);
-                routePoints.Add(JsonConvert.DeserializeObject<IRoutePoint>(json));
+                routePoints.Add(JsonConvert.DeserializeObject<IRoutePoint>(json, options));
             }
         }
 
         private void SaveData()
         {
             string fileName, filePath, json;
-            var options = new JsonSerializerSettings() { Formatting = Formatting.Indented };
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var routePoint in routePoints)
             {
-                fileName = $"{routePoint}.json";
+                fileName = $"{routePoint.Id}.json";
                 filePath = path + "\\" + fileName;
                 json = JsonConvert.SerializeObject(routePoint, options);
                 File.WriteAllText(filePath, json);
@@ -58,14 +59,15 @@ namespace CourseWork1.Repositories
 
         public IRoutePoint GetById(int id)
         {
-            return routePoints.FirstOrDefault(c => c.Id == id);
+            var vp = routePoints.FirstOrDefault(c => c.Id == id);
+            if (vp == null) throw new Exception($"Пункт маршрута с id {id} не найден.");
+            return new RoutePoint(id, vp.Name, vp.StayDuration, vp.HotelName, vp.HotelClass, vp.Excursions.ToList());
         }
 
-        public void Remove(int id)
+        public void Remove(IRoutePoint routePoint)
         {
-            IRoutePoint routePoint = GetById(id);
-            if (routePoint != null) routePoints.Remove(routePoint);
-            SaveData();
+            if(routePoints.Remove(routePoint))
+                SaveData();
         }
 
         public void Update(IRoutePoint routePoint)
@@ -73,9 +75,12 @@ namespace CourseWork1.Repositories
             IRoutePoint existingRoutePoint = GetById(routePoint.Id);
             if (existingRoutePoint != null)
             {
-                routePoints.Remove(existingRoutePoint);
-                routePoints.Add(routePoint);
+                routePoints[routePoints.IndexOf(existingRoutePoint)] = routePoint;
                 SaveData();
+            }
+            else
+            {
+                throw new Exception("Невозможно обновить пункт маршрута, так как он не найден.");
             }
         }
     }

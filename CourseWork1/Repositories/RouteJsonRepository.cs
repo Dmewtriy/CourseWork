@@ -25,20 +25,21 @@ namespace CourseWork1.Repositories
         {
             string[] routeFiles = Directory.GetFiles(path);
             string json;
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var routeFile in routeFiles)
             {
                 json = File.ReadAllText(routeFile);
-                routes.Add(JsonConvert.DeserializeObject<IRoute>(json));
+                routes.Add(JsonConvert.DeserializeObject<IRoute>(json, options));
             }
         }
 
         private void SaveData()
         {
             string fileName, filePath, json;
-            var options = new JsonSerializerSettings() { Formatting = Formatting.Indented };
+            var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var route in routes)
             {
-                fileName = $"{route}.json";
+                fileName = $"{route.Id}.json";
                 filePath = path + "\\" + fileName;
                 json = JsonConvert.SerializeObject(route, options);
                 File.WriteAllText(filePath, json);
@@ -58,14 +59,15 @@ namespace CourseWork1.Repositories
 
         public IRoute GetById(int id)
         {
-            return routes.FirstOrDefault(c => c.Id == id);
+            var route = routes.FirstOrDefault(c => c.Id == id);
+            if (route == null) throw new Exception($"Маршрут с id {id} не найден.");
+            return new Route(id, route.Name, route.Country, route.Duration, route.Points.ToList());
         }
 
-        public void Remove(int id)
+        public void Remove(IRoute route)
         {
-            IRoute route = GetById(id);
-            if (route != null) routes.Remove(route);
-            SaveData();
+            if(routes.Remove(route))
+                SaveData();
         }
 
         public void Update(IRoute route)
@@ -73,9 +75,12 @@ namespace CourseWork1.Repositories
             IRoute existingRoute = GetById(route.Id);
             if (existingRoute != null)
             {
-                routes.Remove(existingRoute);
-                routes.Add(route);
+                routes[routes.IndexOf(existingRoute)] = route;
                 SaveData();
+            }
+            else
+            {
+                throw new Exception("Невозможно обновить маршрут, так как он не найден.");
             }
         }
     }
