@@ -57,7 +57,7 @@ namespace CourseWork1.Repositories
             return routePoints;
         }
 
-        public IRoutePoint GetById(int id)
+        public IRoutePoint GetById(long id)
         {
             var vp = routePoints.FirstOrDefault(c => c.Id == id);
             if (vp == null) throw new Exception($"Пункт маршрута с id {id} не найден.");

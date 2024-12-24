@@ -57,7 +57,7 @@ namespace CourseWork1.Repositories
             return excursions;
         }
 
-        public IExcursion GetById(int id)
+        public IExcursion GetById(long id)
         {
             var exc = excursions.FirstOrDefault(c => c.Id == id);
             if (exc == null) throw new Exception($"Экскурсия с id {id} не найдена");

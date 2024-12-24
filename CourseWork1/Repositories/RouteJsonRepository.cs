@@ -57,7 +57,7 @@ namespace CourseWork1.Repositories
             return routes;
         }
 
-        public IRoute GetById(int id)
+        public IRoute GetById(long id)
         {
             var route = routes.FirstOrDefault(c => c.Id == id);
             if (route == null) throw new Exception($"Маршрут с id {id} не найден.");

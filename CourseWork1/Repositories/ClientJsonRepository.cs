@@ -57,7 +57,7 @@ namespace CourseWork1.Repositories
             return clients;
         }
 
-        public IClient GetById(int id)
+        public IClient GetById(long id)
         {
             var client =  clients.FirstOrDefault(c => c.Id == id);
             if (client == null)

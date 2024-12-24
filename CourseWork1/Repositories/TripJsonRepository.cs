@@ -59,7 +59,7 @@ namespace CourseWork1.Repositories
             return trips;
         }
 
-        public ITrip GetById(int id)
+        public ITrip GetById(long id)
         {
             var trip = trips.FirstOrDefault(c => c.Id == id);
             if (trip == null) throw new Exception($"Поездка с id {id} не найдена");

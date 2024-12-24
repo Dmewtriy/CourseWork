@@ -55,7 +55,7 @@ namespace CourseWork1.Repositories
             return companyRepresentatives;
         }
 
-        public ICompanyRepresentative GetById(int id)
+        public ICompanyRepresentative GetById(long id)
         {
             var compRepr = companyRepresentatives.FirstOrDefault(c => c.Id == id);
             if (compRepr == null) 
