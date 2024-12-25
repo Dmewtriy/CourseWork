@@ -17,6 +17,7 @@ namespace CourseWork1.Repositories
         public ClientJsonRepository(string path)
         {
             this.path = path;
+            Directory.CreateDirectory(path);
             clients = new List<IClient>();
             LoadData();
         }
@@ -35,6 +36,8 @@ namespace CourseWork1.Repositories
 
         private void SaveData() 
         {
+            Directory.Delete(path, true);
+            Directory.CreateDirectory(path);
             string fileName, filePath, json;
             var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var client in clients) 
