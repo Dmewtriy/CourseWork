@@ -19,7 +19,6 @@ namespace CourseWork1
             IClientService service = new ClientService(repo);
             ClientsForm clients = new ClientsForm();
             ClientPresenter presenter = new ClientPresenter(service, clients);
-            ClientForm cl = new ClientForm();
             Application.Run(clients);
         }
     }

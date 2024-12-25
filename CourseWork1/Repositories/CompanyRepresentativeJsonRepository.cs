@@ -16,6 +16,7 @@ namespace CourseWork1.Repositories
         {
             this.path = path;
             companyRepresentatives = new List<ICompanyRepresentative>();
+            Directory.CreateDirectory(path);
             LoadData();
         }
 
@@ -33,6 +34,8 @@ namespace CourseWork1.Repositories
 
         private void SaveData()
         {
+            Directory.Delete(path, true);
+            Directory.CreateDirectory(path);
             string fileName, filePath, json;
             var options = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All, Formatting = Formatting.Indented };
             foreach (var companyRepresentative in companyRepresentatives)
