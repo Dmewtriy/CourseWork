@@ -38,6 +38,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\ClientDTO.cs" />
+    <Compile Include="DTOs\PassportDTO.cs" />
     <Compile Include="Entities\classes\Client.cs" />
     <Compile Include="Entities\classes\CompanyRepresentative.cs" />
     <Compile Include="Entities\classes\Excursion.cs" />
@@ -55,7 +58,20 @@
     <Compile Include="Entities\Interfaces\IExcursion.cs" />
     <Compile Include="Entities\Interfaces\IPassport.cs" />
     <Compile Include="Entities\Interfaces\IPerson.cs" />
+    <Compile Include="Forms\ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientsForm.Designer.cs">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mappers\ClientMapper.cs" />
+    <Compile Include="Mappers\PassportMapper.cs" />
     <Compile Include="Presenters\classes\ClientPresenter.cs" />
     <Compile Include="Presenters\interfaces\IClientPresenter.cs" />
     <Compile Include="Repositories\IRepository.cs" />
@@ -83,6 +99,13 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientsForm.resx">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
