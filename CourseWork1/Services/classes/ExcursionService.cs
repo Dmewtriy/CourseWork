@@ -43,7 +43,7 @@ namespace CourseWork1.Services.classes
                 id = BitConverter.ToInt64(Guid.NewGuid().ToByteArray(), 0);
                 try
                 {
-                    existingExcursion = repository.GetById(id); // бросает исключение, когда маршрут не найден
+                    existingExcursion = repository.GetById(id); // бросает исключение, когда экскурсия не найдена
                 }
                 catch
                 {

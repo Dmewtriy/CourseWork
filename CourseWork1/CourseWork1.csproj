@@ -92,7 +92,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\classes\Trip.cs" />
     <Compile Include="Services\classes\ClientService.cs" />
+    <Compile Include="Services\classes\CompanyRepresentativeService.cs" />
+    <Compile Include="Services\classes\ExcursionService.cs" />
+    <Compile Include="Services\classes\RoutePointService.cs" />
+    <Compile Include="Services\classes\RouteService.cs" />
+    <Compile Include="Services\classes\TripService.cs" />
     <Compile Include="Services\interfaces\IClientService.cs" />
+    <Compile Include="Services\interfaces\ICompanyRepresentativeService.cs" />
+    <Compile Include="Services\interfaces\IExcursionService.cs" />
+    <Compile Include="Services\interfaces\IRoutePointService.cs" />
+    <Compile Include="Services\interfaces\IRouteService.cs" />
+    <Compile Include="Services\interfaces\ITripService.cs" />
     <Compile Include="Views\IClientView.cs" />
   </ItemGroup>
   <ItemGroup>
