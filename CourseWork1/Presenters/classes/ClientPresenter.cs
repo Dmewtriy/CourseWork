@@ -25,6 +25,7 @@ namespace CourseWork1.Presenters.classes
             view.ClientDeleted += (sender, client) => DeleteClient(client);
             view.LoadClientsRequested += (sender, e) => LoadClients();
             view.ClientSearchRequested += (sender, id) => GetClientById(id);
+            view.ClientSelected += (sender, client) => GetPhoto(client);
         }
 
         public void AddClient(ClientDTO client)
@@ -78,16 +79,15 @@ namespace CourseWork1.Presenters.classes
 
         public void UpdateClient(ClientDTO client)
         {
-            try
-            {
-                service.EditClient(ClientMapper.ToEntity(client));
-                view.UpdateClientsList(GetClients());
-                view.HighlightClient(client);
-            }
-            catch (Exception ex) 
-            {
-                view.ShowErrorMessage(ex.Message);
-            }
+            service.EditClient(ClientMapper.ToEntity(client));
+            view.UpdateClientsList(GetClients());
+            view.HighlightClient(client);
+        }
+
+        public void GetPhoto(ClientDTO client)
+        {
+            var photoPath = service.GetClientById(client.Id).PathToPhoto;
+            view.ShowClientPhoto(photoPath);
         }
     }
 }

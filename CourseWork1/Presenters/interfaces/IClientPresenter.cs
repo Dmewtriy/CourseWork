@@ -14,5 +14,6 @@ namespace CourseWork1.Presenters.interfaces
         void UpdateClient(ClientDTO client);
         IEnumerable<ClientDTO> GetClients();
         void GetClientById(long id);
+        void GetPhoto(ClientDTO client);
     }
 }
