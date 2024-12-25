@@ -13,7 +13,11 @@ namespace CourseWork1.DTOs
         public string Patronymic { get; set; }
         public long Id { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public IPassport PassportData { get; set; }
+        public PassportDTO PassportData { get; set; }
         public string PathToPhoto { get; set; }
+        public override string ToString()
+        {
+            return $"{Id} {LastName} {FirstName} {Patronymic} {DateOfBirth.ToShortDateString()} {PassportData.Series}{PassportData.Number}";
+        }
     }
 }

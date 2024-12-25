@@ -18,7 +18,7 @@ namespace CourseWork1.Mappers
                 LastName = client.LastName,
                 Patronymic = client.Patronymic,
                 DateOfBirth = client.DateOfBirth,
-                PassportData = client.PassportData,
+                PassportData = PassportMapper.ToDTO(client.PassportData),
                 PathToPhoto = client.PathToPhoto
             };
         }
@@ -26,9 +26,7 @@ namespace CourseWork1.Mappers
         {
             var clientPassport = client.PassportData;
             return new Client(client.Id, client.FirstName, client.LastName, client.Patronymic, client.DateOfBirth,
-                new RUPassport(clientPassport.Series, clientPassport.Number, clientPassport.IssuedDate,
-                clientPassport.IssuedBy),
-                client.PathToPhoto);
+                PassportMapper.ToEntity(clientPassport), client.PathToPhoto);
         }
     }
 }
