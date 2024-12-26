@@ -1,14 +1,10 @@
 ﻿using CourseWork1.DTOs;
 using CourseWork1.Mappers;
 using CourseWork1.Presenters.interfaces;
-using CourseWork1.Services;
 using CourseWork1.Services.interfaces;
 using CourseWork1.Views;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CourseWork1.Presenters.classes
 {

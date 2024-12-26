@@ -5,7 +5,6 @@ using CourseWork1.Repositories;
 using CourseWork1.Services;
 using CourseWork1.Services.classes;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CourseWork1

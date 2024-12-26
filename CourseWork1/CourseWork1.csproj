@@ -85,9 +85,15 @@
     <Compile Include="Presenters\classes\ClientPresenter.cs" />
     <Compile Include="Presenters\classes\CompanyRepresentativePresenter.cs" />
     <Compile Include="Presenters\classes\ExcursionPresenter.cs" />
+    <Compile Include="Presenters\classes\RoutePointPresenter.cs" />
+    <Compile Include="Presenters\classes\RoutePresenter.cs" />
+    <Compile Include="Presenters\classes\TripPresenter.cs" />
     <Compile Include="Presenters\interfaces\IClientPresenter.cs" />
     <Compile Include="Presenters\interfaces\ICompanyRepresentativePresenter.cs" />
     <Compile Include="Presenters\interfaces\IExcursionPresenter.cs" />
+    <Compile Include="Presenters\interfaces\IRoutePointPresenter.cs" />
+    <Compile Include="Presenters\interfaces\IRoutePresenter.cs" />
+    <Compile Include="Presenters\interfaces\ITripPresenter.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Entities\Interfaces\IRoute.cs" />
     <Compile Include="Entities\Interfaces\IRoutePoint.cs" />
@@ -120,6 +126,9 @@
     <Compile Include="Views\IClientView.cs" />
     <Compile Include="Views\ICompanyRepresentativeView.cs" />
     <Compile Include="Views\IExcursionView.cs" />
+    <Compile Include="Views\IRoutePointView.cs" />
+    <Compile Include="Views\IRouteView.cs" />
+    <Compile Include="Views\ITripView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
