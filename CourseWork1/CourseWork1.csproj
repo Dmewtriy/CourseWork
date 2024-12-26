@@ -87,6 +87,18 @@
     <Compile Include="Forms\CompanyRepresentativesForm.Designer.cs">
       <DependentUpon>CompanyRepresentativesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExcursionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExcursionForm.Designer.cs">
+      <DependentUpon>ExcursionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExcursionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExcursionsForm.Designer.cs">
+      <DependentUpon>ExcursionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CompanyRepresentativesForm.resx">
       <DependentUpon>CompanyRepresentativesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExcursionForm.resx">
+      <DependentUpon>ExcursionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExcursionsForm.resx">
+      <DependentUpon>ExcursionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

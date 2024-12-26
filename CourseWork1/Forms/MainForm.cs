@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CourseWork1.Presenters.interfaces;
+using CourseWork1.Services.interfaces;
 
 namespace CourseWork1.Forms
 {
@@ -43,7 +44,11 @@ namespace CourseWork1.Forms
 
         private void ExcursionsButtonClick(object sender, EventArgs e)
         {
-
+            IRepository<IExcursion> repo = new ExcursionJsonRepository("..\\..\\..\\data\\excursions");
+            IExcursionService service = new ExcursionService(repo);
+            ExcursionsForm form = new ExcursionsForm();
+            IExcursionPresenter presenter = new ExcursionPresenter(service, form);
+            form.ShowDialog();
         }
 
         private void PointsButtonClick(object sender, EventArgs e)

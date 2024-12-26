@@ -62,12 +62,13 @@ namespace CourseWork1.Forms
             this.Patronymic,
             this.Number,
             this.Email});
-            this.RepresentativesDataGridView.Location = new System.Drawing.Point(12, 22);
+            this.RepresentativesDataGridView.Location = new System.Drawing.Point(16, 27);
+            this.RepresentativesDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RepresentativesDataGridView.MultiSelect = false;
             this.RepresentativesDataGridView.Name = "RepresentativesDataGridView";
             this.RepresentativesDataGridView.ReadOnly = true;
             this.RepresentativesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.RepresentativesDataGridView.Size = new System.Drawing.Size(662, 150);
+            this.RepresentativesDataGridView.Size = new System.Drawing.Size(883, 185);
             this.RepresentativesDataGridView.TabIndex = 0;
             // 
             // Id
@@ -76,7 +77,7 @@ namespace CourseWork1.Forms
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Id.Width = 22;
+            this.Id.Width = 25;
             // 
             // LastName
             // 
@@ -84,7 +85,7 @@ namespace CourseWork1.Forms
             this.LastName.Name = "LastName";
             this.LastName.ReadOnly = true;
             this.LastName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.LastName.Width = 62;
+            this.LastName.Width = 76;
             // 
             // FirstName
             // 
@@ -92,7 +93,7 @@ namespace CourseWork1.Forms
             this.FirstName.Name = "FirstName";
             this.FirstName.ReadOnly = true;
             this.FirstName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.FirstName.Width = 35;
+            this.FirstName.Width = 41;
             // 
             // Patronymic
             // 
@@ -100,7 +101,7 @@ namespace CourseWork1.Forms
             this.Patronymic.Name = "Patronymic";
             this.Patronymic.ReadOnly = true;
             this.Patronymic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Patronymic.Width = 60;
+            this.Patronymic.Width = 77;
             // 
             // Number
             // 
@@ -108,7 +109,7 @@ namespace CourseWork1.Forms
             this.Number.Name = "Number";
             this.Number.ReadOnly = true;
             this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Number.Width = 89;
+            this.Number.Width = 114;
             // 
             // Email
             // 
@@ -116,13 +117,14 @@ namespace CourseWork1.Forms
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             this.Email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Email.Width = 43;
+            this.Email.Width = 55;
             // 
             // ButtonAdd
             // 
-            this.ButtonAdd.Location = new System.Drawing.Point(38, 369);
+            this.ButtonAdd.Location = new System.Drawing.Point(51, 454);
+            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(98, 51);
+            this.ButtonAdd.Size = new System.Drawing.Size(131, 63);
             this.ButtonAdd.TabIndex = 1;
             this.ButtonAdd.Text = "Добавить";
             this.ButtonAdd.UseVisualStyleBackColor = true;
@@ -130,9 +132,10 @@ namespace CourseWork1.Forms
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(142, 369);
+            this.EditButton.Location = new System.Drawing.Point(189, 454);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(98, 51);
+            this.EditButton.Size = new System.Drawing.Size(131, 63);
             this.EditButton.TabIndex = 1;
             this.EditButton.Text = "Редактировать";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -140,9 +143,10 @@ namespace CourseWork1.Forms
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(246, 369);
+            this.DeleteButton.Location = new System.Drawing.Point(328, 454);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(98, 51);
+            this.DeleteButton.Size = new System.Drawing.Size(131, 63);
             this.DeleteButton.TabIndex = 1;
             this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -150,9 +154,10 @@ namespace CourseWork1.Forms
             // 
             // RefreshButton
             // 
-            this.RefreshButton.Location = new System.Drawing.Point(350, 369);
+            this.RefreshButton.Location = new System.Drawing.Point(467, 454);
+            this.RefreshButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(98, 51);
+            this.RefreshButton.Size = new System.Drawing.Size(131, 63);
             this.RefreshButton.TabIndex = 1;
             this.RefreshButton.Text = "Обновить список";
             this.RefreshButton.UseVisualStyleBackColor = true;
@@ -160,17 +165,19 @@ namespace CourseWork1.Forms
             // 
             // IdTextBox
             // 
-            this.IdTextBox.Location = new System.Drawing.Point(534, 369);
-            this.IdTextBox.Name = "IdTextBot";
-            this.IdTextBox.Size = new System.Drawing.Size(140, 20);
+            this.IdTextBox.Location = new System.Drawing.Point(712, 454);
+            this.IdTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IdTextBox.Name = "IdTextBox";
+            this.IdTextBox.Size = new System.Drawing.Size(185, 23);
             this.IdTextBox.TabIndex = 2;
             this.IdTextBox.Text = "Введите id для поиска";
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(534, 396);
+            this.SearchButton.Location = new System.Drawing.Point(712, 487);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(140, 23);
+            this.SearchButton.Size = new System.Drawing.Size(187, 28);
             this.SearchButton.TabIndex = 3;
             this.SearchButton.Text = "Поиск по id";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -178,9 +185,9 @@ namespace CourseWork1.Forms
             // 
             // CompanyRepresentativesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 450);
+            this.ClientSize = new System.Drawing.Size(967, 554);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.IdTextBox);
             this.Controls.Add(this.RefreshButton);
@@ -188,6 +195,8 @@ namespace CourseWork1.Forms
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.ButtonAdd);
             this.Controls.Add(this.RepresentativesDataGridView);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CompanyRepresentativesForm";
             this.Text = "Представители компании";
             ((System.ComponentModel.ISupportInitialize)(this.RepresentativesDataGridView)).EndInit();

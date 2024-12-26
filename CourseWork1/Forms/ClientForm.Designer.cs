@@ -128,7 +128,6 @@ namespace CourseWork1.Forms
 
         private void BtnAddPhoto_Click(object sender, EventArgs e)
         {
-            // Открытие диалога выбора файла изображения
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp";
 
