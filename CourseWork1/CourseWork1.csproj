@@ -75,6 +75,24 @@
     <Compile Include="Forms\ClientsForm.Designer.cs">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CompanyRepresenativeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyRepresenativeForm.Designer.cs">
+      <DependentUpon>CompanyRepresenativeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyRepresentativesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyRepresentativesForm.Designer.cs">
+      <DependentUpon>CompanyRepresentativesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mappers\ClientMapper.cs" />
     <Compile Include="Mappers\CompanyRepresentativeMapper.cs" />
     <Compile Include="Mappers\ExcursionMapper.cs" />
@@ -140,6 +158,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientsForm.resx">
       <DependentUpon>ClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyRepresenativeForm.resx">
+      <DependentUpon>CompanyRepresenativeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyRepresentativesForm.resx">
+      <DependentUpon>CompanyRepresentativesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

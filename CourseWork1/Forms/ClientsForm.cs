@@ -11,7 +11,6 @@ namespace CourseWork1.Forms
         public ClientsForm()
         {
             InitializeComponent();
-            CustomizeDataGridView();
             Load += LoadClients;
         }
 

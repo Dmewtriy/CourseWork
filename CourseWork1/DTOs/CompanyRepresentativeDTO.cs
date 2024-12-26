@@ -8,5 +8,9 @@
         public long Id { get; set; }
         public string Number { get; set; }
         public string Email { get; set; }
+        public override string ToString()
+        {
+            return $"{Id} {LastName} {FirstName} {Patronymic} {Number} {Email}";
+        }
     }
 }

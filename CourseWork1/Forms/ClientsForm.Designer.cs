@@ -46,6 +46,10 @@ namespace CourseWork1.Forms
                 SelectionMode = DataGridViewSelectionMode.FullRowSelect,
                 ColumnCount = 6,
                 AllowUserToAddRows = false,
+                AllowUserToDeleteRows = false,
+                AllowUserToOrderColumns = false,
+                AllowUserToResizeColumns = false,
+                AllowUserToResizeRows = false,
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells,
                 AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells,
                 AutoSize = true,
@@ -136,13 +140,6 @@ namespace CourseWork1.Forms
             refreshButton.Click += LoadClients;
             searchButton.Click += SearchClientByIdButtonClick;
         }
-        private void CustomizeDataGridView()
-        {
-            foreach (DataGridViewColumn column in clientsDataGridView.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
-        }
 
         private void ClientsDataGridView_SelectionChanged(object sender, EventArgs e)
         {
@@ -151,6 +148,10 @@ namespace CourseWork1.Forms
                 var selectedRow = clientsDataGridView.SelectedRows[0];
                 ClientDTO client = (ClientDTO)selectedRow.Tag;
                 ClientSelected?.Invoke(this, client);
+            }
+            else
+            {
+                ShowClientPhoto("");
             }
         }
 

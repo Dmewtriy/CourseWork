@@ -14,11 +14,9 @@ namespace CourseWork1
         [STAThreadAttribute]
         static void Main()
         {
-            IRepository<IClient> repo = new ClientJsonRepository("..\\..\\..\\data\\clients");
-            IClientService service = new ClientService(repo);
-            ClientsForm clients = new ClientsForm();
-            ClientPresenter presenter = new ClientPresenter(service, clients);
-            Application.Run(clients);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
         }
     }
 }
