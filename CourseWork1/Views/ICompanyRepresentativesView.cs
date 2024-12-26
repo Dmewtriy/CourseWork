@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CourseWork1.Views
 {
-    public interface ICompanyRepresentativeView
+    public interface ICompanyRepresentativesView
     {
         event EventHandler<CompanyRepresentativeDTO> CompanyRepresentativeAdded;
         event EventHandler<CompanyRepresentativeDTO> CompanyRepresentativeUpdated;

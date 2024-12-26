@@ -35,10 +35,6 @@ namespace CourseWork1.Forms
         private void InitializeComponent()
         {
             this.ExcursionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchButton = new System.Windows.Forms.Button();
             this.IdTextBox = new System.Windows.Forms.TextBox();
             this.RefreshButton = new System.Windows.Forms.Button();
@@ -46,6 +42,9 @@ namespace CourseWork1.Forms
             this.EditButton = new System.Windows.Forms.Button();
             this.ButtonAdd = new System.Windows.Forms.Button();
             this.ExcursionDescription = new System.Windows.Forms.TextBox();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ExcursionsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,9 +57,7 @@ namespace CourseWork1.Forms
             this.ExcursionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ExcursionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.ExName,
-            this.StartDate,
-            this.EndDate});
+            this.ExName});
             this.ExcursionsDataGridView.Location = new System.Drawing.Point(16, 15);
             this.ExcursionsDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.ExcursionsDataGridView.MultiSelect = false;
@@ -71,38 +68,6 @@ namespace CourseWork1.Forms
             this.ExcursionsDataGridView.TabIndex = 1;
             this.ExcursionsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExcursionsDataGridView_SelectionChanged);
             this.ExcursionsDataGridView.Resize += new System.EventHandler(this.MoveDescription);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Id.Width = 25;
-            // 
-            // ExName
-            // 
-            this.ExName.HeaderText = "Название";
-            this.ExName.Name = "ExName";
-            this.ExName.ReadOnly = true;
-            this.ExName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ExName.Width = 78;
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Дата начала";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            this.StartDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.StartDate.Width = 90;
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "Дата окончания";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.ReadOnly = true;
-            this.EndDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.EndDate.Width = 111;
             // 
             // SearchButton
             // 
@@ -170,20 +135,46 @@ namespace CourseWork1.Forms
             // 
             // ExcursionDescription
             // 
-            this.ExcursionDescription.Location = new System.Drawing.Point(696, 15);
-            this.ExcursionDescription.MaximumSize = new System.Drawing.Size(329, 390);
+            this.ExcursionDescription.Location = new System.Drawing.Point(696, 42);
+            this.ExcursionDescription.MaximumSize = new System.Drawing.Size(329, 360);
             this.ExcursionDescription.Multiline = true;
             this.ExcursionDescription.Name = "ExcursionDescription";
             this.ExcursionDescription.ReadOnly = true;
-            this.ExcursionDescription.Size = new System.Drawing.Size(329, 390);
+            this.ExcursionDescription.Size = new System.Drawing.Size(329, 360);
             this.ExcursionDescription.TabIndex = 10;
             this.ExcursionDescription.TextChanged += new System.EventHandler(this.ExcursionDescription_TextChanged);
+            // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Location = new System.Drawing.Point(693, 15);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(144, 17);
+            this.DescriptionLabel.TabIndex = 11;
+            this.DescriptionLabel.Text = "Описание экскурсии";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Id.Width = 25;
+            // 
+            // ExName
+            // 
+            this.ExName.HeaderText = "Название";
+            this.ExName.Name = "ExName";
+            this.ExName.ReadOnly = true;
+            this.ExName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ExName.Width = 78;
             // 
             // ExcursionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.ExcursionDescription);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.IdTextBox);
@@ -301,10 +292,9 @@ namespace CourseWork1.Forms
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button ButtonAdd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
         private System.Windows.Forms.TextBox ExcursionDescription;
+        private Label DescriptionLabel;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn ExName;
     }
 }

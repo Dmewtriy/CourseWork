@@ -11,9 +11,9 @@ namespace CourseWork1.Presenters.classes
     public class ClientPresenter : IClientPresenter
     {
         private readonly IClientService service;
-        private readonly IClientView view;
+        private readonly IClientsView view;
 
-        public ClientPresenter(IClientService service, IClientView view)
+        public ClientPresenter(IClientService service, IClientsView view)
         {
             this.service = service;
             this.view = view;

@@ -105,6 +105,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RoutePointForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoutePointForm.Designer.cs">
+      <DependentUpon>RoutePointForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mappers\ClientMapper.cs" />
     <Compile Include="Mappers\CompanyRepresentativeMapper.cs" />
     <Compile Include="Mappers\ExcursionMapper.cs" />
@@ -153,12 +159,13 @@
     <Compile Include="Services\interfaces\IRoutePointService.cs" />
     <Compile Include="Services\interfaces\IRouteService.cs" />
     <Compile Include="Services\interfaces\ITripService.cs" />
-    <Compile Include="Views\IClientView.cs" />
-    <Compile Include="Views\ICompanyRepresentativeView.cs" />
-    <Compile Include="Views\IExcursionView.cs" />
+    <Compile Include="Views\IClientsView.cs" />
+    <Compile Include="Views\ICompanyRepresentativesView.cs" />
+    <Compile Include="Views\IExcursionsView.cs" />
+    <Compile Include="Views\IRoutePointsView.cs" />
     <Compile Include="Views\IRoutePointView.cs" />
-    <Compile Include="Views\IRouteView.cs" />
-    <Compile Include="Views\ITripView.cs" />
+    <Compile Include="Views\IRoutesView.cs" />
+    <Compile Include="Views\ITripsView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -185,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoutePointForm.resx">
+      <DependentUpon>RoutePointForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

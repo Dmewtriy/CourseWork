@@ -11,9 +11,9 @@ namespace CourseWork1.Presenters.classes
     public class RoutePresenter : IRoutePresenter
     {
         private readonly IRouteService service;
-        private readonly IRouteView view;
+        private readonly IRoutesView view;
 
-        public RoutePresenter(IRouteService service, IRouteView view)
+        public RoutePresenter(IRouteService service, IRoutesView view)
         {
             this.service = service;
             this.view = view;

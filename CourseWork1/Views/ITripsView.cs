@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CourseWork1.Views
 {
-    public interface ITripView
+    public interface ITripsView
     {
         event EventHandler<TripDTO> TripAdded;
         event EventHandler<TripDTO> TripUpdated;

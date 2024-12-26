@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CourseWork1.Forms
 {
-    public partial class CompanyRepresentativesForm : Form, ICompanyRepresentativeView
+    public partial class CompanyRepresentativesForm : Form, ICompanyRepresentativesView
     {
         public CompanyRepresentativesForm()
         {

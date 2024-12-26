@@ -7,16 +7,12 @@ namespace CourseWork1
         private long id;
         private string name;
         private string description;
-        private DateTime startDate;
-        private DateTime endDate;
 
-        public Excursion(long id, string name, string description, DateTime startDate, DateTime endDate)
+        public Excursion(long id, string name, string description)
         {
             Id = id;
             Name = name;
             Description = description;
-            StartDate = startDate;
-            EndDate = endDate;
         }
 
         public long Id
@@ -73,43 +69,6 @@ namespace CourseWork1
             }
         }
 
-        public DateTime StartDate
-        {
-            set
-            {
-                if (value != null)
-                {
-                    startDate = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Неверная начальная дата");
-                }
-            }
-            get
-            {
-                return startDate;
-            }
-        }
-
-        public DateTime EndDate
-        {
-            set
-            {
-                if (value != null && DateTime.Compare(value, StartDate) > 0)
-                {
-                    endDate = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Неверная конечная дата");
-                }
-            }
-            get
-            {
-                return endDate;
-            }
-        }
 
         public override bool Equals(object obj)
         {

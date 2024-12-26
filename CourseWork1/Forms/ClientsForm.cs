@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CourseWork1.Forms
 {
-    public partial class ClientsForm : Form, IClientView
+    public partial class ClientsForm : Form, IClientsView
     {
         public ClientsForm()
         {

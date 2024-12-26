@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CourseWork1.Views
 {
-    public interface IExcursionView
+    public interface IExcursionsView
     {
         event EventHandler<ExcursionDTO> ExcursionAdded;
         event EventHandler<ExcursionDTO> ExcursionUpdated;

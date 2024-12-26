@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CourseWork1.Views
 {
-    public interface IRouteView
+    public interface IRoutesView
     {
         event EventHandler<RouteDTO> RouteAdded;
         event EventHandler<RouteDTO> RouteUpdated;

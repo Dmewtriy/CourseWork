@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CourseWork1.Views
 {
-    public interface IClientView
+    public interface IClientsView
     {
         event EventHandler<ClientDTO> ClientAdded;
         event EventHandler<ClientDTO> ClientUpdated;

@@ -11,9 +11,9 @@ namespace CourseWork1.Presenters.classes
     public class ExcursionPresenter : IExcursionPresenter
     {
         private readonly IExcursionService service;
-        private readonly IExcursionView view;
+        private readonly IExcursionsView view;
 
-        public ExcursionPresenter(IExcursionService service, IExcursionView view)
+        public ExcursionPresenter(IExcursionService service, IExcursionsView view)
         {
             this.service = service;
             this.view = view;

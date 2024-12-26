@@ -11,9 +11,9 @@ namespace CourseWork1.Presenters.classes
     public class CompanyRepresentativePresenter : ICompanyRepresentativePresenter
     {
         private readonly ICompanyRepresentativeService service;
-        private readonly ICompanyRepresentativeView view;
+        private readonly ICompanyRepresentativesView view;
 
-        public CompanyRepresentativePresenter(ICompanyRepresentativeService service, ICompanyRepresentativeView view)
+        public CompanyRepresentativePresenter(ICompanyRepresentativeService service, ICompanyRepresentativesView view)
         {
             this.service = service;
             this.view = view;

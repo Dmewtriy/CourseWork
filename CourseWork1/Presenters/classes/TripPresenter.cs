@@ -11,9 +11,9 @@ namespace CourseWork1.Presenters.classes
     public class TripPresenter : ITripPresenter
     {
         private readonly ITripService service;
-        private readonly ITripView view;
+        private readonly ITripsView view;
 
-        public TripPresenter(ITripService service, ITripView view)
+        public TripPresenter(ITripService service, ITripsView view)
         {
             this.service = service;
             this.view = view;

@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CourseWork1.Forms
 {
-    public partial class ExcursionsForm : Form, IExcursionView
+    public partial class ExcursionsForm : Form, IExcursionsView
     {
         public ExcursionsForm()
         {
