@@ -49,7 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\ClientDTO.cs" />
+    <Compile Include="DTOs\CompanyRepresentativeDTO.cs" />
+    <Compile Include="DTOs\ExcursionDTO.cs" />
     <Compile Include="DTOs\PassportDTO.cs" />
+    <Compile Include="DTOs\RouteDTO.cs" />
+    <Compile Include="DTOs\RoutePointDTO.cs" />
+    <Compile Include="DTOs\TripDTO.cs" />
     <Compile Include="Entities\classes\Client.cs" />
     <Compile Include="Entities\classes\CompanyRepresentative.cs" />
     <Compile Include="Entities\classes\Excursion.cs" />
@@ -71,9 +76,18 @@
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mappers\ClientMapper.cs" />
+    <Compile Include="Mappers\CompanyRepresentativeMapper.cs" />
+    <Compile Include="Mappers\ExcursionMapper.cs" />
     <Compile Include="Mappers\PassportMapper.cs" />
+    <Compile Include="Mappers\RouteMapper.cs" />
+    <Compile Include="Mappers\RoutePointMapper.cs" />
+    <Compile Include="Mappers\TripMapper.cs" />
     <Compile Include="Presenters\classes\ClientPresenter.cs" />
+    <Compile Include="Presenters\classes\CompanyRepresentativePresenter.cs" />
+    <Compile Include="Presenters\classes\ExcursionPresenter.cs" />
     <Compile Include="Presenters\interfaces\IClientPresenter.cs" />
+    <Compile Include="Presenters\interfaces\ICompanyRepresentativePresenter.cs" />
+    <Compile Include="Presenters\interfaces\IExcursionPresenter.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Entities\Interfaces\IRoute.cs" />
     <Compile Include="Entities\Interfaces\IRoutePoint.cs" />
@@ -104,6 +118,8 @@
     <Compile Include="Services\interfaces\IRouteService.cs" />
     <Compile Include="Services\interfaces\ITripService.cs" />
     <Compile Include="Views\IClientView.cs" />
+    <Compile Include="Views\ICompanyRepresentativeView.cs" />
+    <Compile Include="Views\IExcursionView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
