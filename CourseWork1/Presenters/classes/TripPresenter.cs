@@ -23,6 +23,8 @@ namespace CourseWork1.Presenters.classes
             view.LoadTripsRequested += (sender, e) => LoadTrips();
             view.TripSearchRequested += (sender, id) => GetTripById(id);
             view.TripSelected += (sender, Trip) => GetTourists(Trip);
+            view.PenaltyPaid += (sender, Trip) => PayPenalty(Trip);
+            view.PenaltyUnpaid += (sender, Trip) => UnPayPenalty(Trip);
         }
 
         public void AddTrip(TripDTO Trip)
@@ -91,6 +93,11 @@ namespace CourseWork1.Presenters.classes
         {
             /* умная логика оплаты*/
             view.PenaltyHighlightTrip(Trip);
+        }
+        public void UnPayPenalty(TripDTO Trip)
+        {
+            /* забирать деньги ещё умнее*/
+            view.PenaltyDeHighlightTrip(Trip);
         }
     }
 }

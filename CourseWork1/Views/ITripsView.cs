@@ -13,11 +13,13 @@ namespace CourseWork1.Views
         event EventHandler<long> TripSearchRequested;
         event EventHandler<TripDTO> TripSelected;
         event EventHandler<TripDTO> PenaltyPaid;
+        event EventHandler<TripDTO> PenaltyUnpaid;
 
         void ShowErrorMessage(string message);
         void UpdateTripsList(IEnumerable<TripDTO> Trips);
         void HighlightTrip(TripDTO Trip);
         void ShowTourists(IEnumerable<ClientDTO> tourists);
         void PenaltyHighlightTrip(TripDTO Trip);
+        void PenaltyDeHighlightTrip(TripDTO Trip);
     }
 }

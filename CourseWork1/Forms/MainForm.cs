@@ -71,7 +71,11 @@ namespace CourseWork1.Forms
 
         private void TripsButtonClick(object sender, EventArgs e)
         {
-
+            IRepository<ITrip> repo = new TripJsonRepository("..\\..\\..\\data\\trips");
+            ITripService service = new TripService(repo);
+            TripsForm form = new TripsForm();
+            ITripPresenter presenter = new TripPresenter(service, form);
+            form.ShowDialog();
         }
     }
 }

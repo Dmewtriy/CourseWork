@@ -75,6 +75,12 @@
     <Compile Include="Forms\ClientsForm.Designer.cs">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ClientsSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientsSelectionForm.Designer.cs">
+      <DependentUpon>ClientsSelectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CompanyRepresenativeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,18 @@
     </Compile>
     <Compile Include="Forms\RoutesForm.Designer.cs">
       <DependentUpon>RoutesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TripForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TripForm.Designer.cs">
+      <DependentUpon>TripForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TripsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TripsForm.Designer.cs">
+      <DependentUpon>TripsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mappers\ClientMapper.cs" />
     <Compile Include="Mappers\CompanyRepresentativeMapper.cs" />
@@ -239,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RoutesForm.resx">
       <DependentUpon>RoutesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TripForm.resx">
+      <DependentUpon>TripForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TripsForm.resx">
+      <DependentUpon>TripsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
