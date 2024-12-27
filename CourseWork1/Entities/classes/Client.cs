@@ -37,8 +37,8 @@ namespace CourseWork1
         public long Id
         {
             get { return id; }
-            set 
-            { 
+            set
+            {
                 if (value >= 0)
                 {
                     id = value;
@@ -167,7 +167,7 @@ namespace CourseWork1
 
         public override bool Equals(object obj)
         {
-            if(obj is Client client)
+            if (obj is Client client)
             {
                 return client.Id == Id;
             }
