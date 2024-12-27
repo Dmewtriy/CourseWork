@@ -93,6 +93,12 @@
     <Compile Include="Forms\ExcursionForm.Designer.cs">
       <DependentUpon>ExcursionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExcursionSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExcursionSelectionForm.Designer.cs">
+      <DependentUpon>ExcursionSelectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ExcursionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,11 +111,35 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RouteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RouteForm.Designer.cs">
+      <DependentUpon>RouteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RoutePointForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\RoutePointForm.Designer.cs">
       <DependentUpon>RoutePointForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RoutePointsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoutePointsForm.Designer.cs">
+      <DependentUpon>RoutePointsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RoutePointsSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoutePointsSelectionForm.Designer.cs">
+      <DependentUpon>RoutePointsSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RoutesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoutesForm.Designer.cs">
+      <DependentUpon>RoutesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mappers\ClientMapper.cs" />
     <Compile Include="Mappers\CompanyRepresentativeMapper.cs" />
@@ -163,7 +193,6 @@
     <Compile Include="Views\ICompanyRepresentativesView.cs" />
     <Compile Include="Views\IExcursionsView.cs" />
     <Compile Include="Views\IRoutePointsView.cs" />
-    <Compile Include="Views\IRoutePointView.cs" />
     <Compile Include="Views\IRoutesView.cs" />
     <Compile Include="Views\ITripsView.cs" />
   </ItemGroup>
@@ -187,14 +216,29 @@
     <EmbeddedResource Include="Forms\ExcursionForm.resx">
       <DependentUpon>ExcursionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExcursionSelectionForm.resx">
+      <DependentUpon>ExcursionSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExcursionsForm.resx">
       <DependentUpon>ExcursionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RouteForm.resx">
+      <DependentUpon>RouteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RoutePointForm.resx">
       <DependentUpon>RoutePointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoutePointsForm.resx">
+      <DependentUpon>RoutePointsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoutePointsSelectionForm.resx">
+      <DependentUpon>RoutePointsSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoutesForm.resx">
+      <DependentUpon>RoutesForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,12 +53,20 @@ namespace CourseWork1.Forms
 
         private void PointsButtonClick(object sender, EventArgs e)
         {
-
+            IRepository<IRoutePoint> repo = new RoutePointJsonRepository("..\\..\\..\\data\\routePoints");
+            IRoutePointService service = new RoutePointService(repo);
+            RoutePointsForm form = new RoutePointsForm();
+            IRoutePointPresenter presenter = new RoutePointPresenter(service, form);
+            form.ShowDialog();
         }
 
         private void RoutesButtonClick(object sender, EventArgs e)
         {
-
+            IRepository<IRoute> repo = new RouteJsonRepository("..\\..\\..\\data\\routes");
+            IRouteService service = new RouteService(repo);
+            RoutesForm form = new RoutesForm();
+            IRoutePresenter presenter = new RoutePresenter(service, form);
+            form.ShowDialog();
         }
 
         private void TripsButtonClick(object sender, EventArgs e)

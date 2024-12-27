@@ -8,6 +8,11 @@ namespace CourseWork1.Mappers
     {
         public static RoutePointDTO ToDTO(IRoutePoint RoutePoint)
         {
+            List<ExcursionDTO> excursionDTOs = new List<ExcursionDTO>();
+            foreach(IExcursion ex in RoutePoint.Excursions)
+            {
+                excursionDTOs.Add(ExcursionMapper.ToDTO(ex));
+            }
             return new RoutePointDTO()
             {
                 Id = RoutePoint.Id,
@@ -15,14 +20,18 @@ namespace CourseWork1.Mappers
                 StayDuration = RoutePoint.StayDuration,
                 HotelClass = RoutePoint.HotelClass,
                 HotelName = RoutePoint.HotelName,
-                Excursions = (List<ExcursionDTO>)RoutePoint.Excursions.Select(x => ExcursionMapper.ToDTO(x))
+                Excursions = excursionDTOs
             };
         }
         public static IRoutePoint ToEntity(RoutePointDTO RoutePoint)
         {
+            List<IExcursion> excursions = new List<IExcursion>();
+            foreach(ExcursionDTO ex in RoutePoint.Excursions)
+            {
+                excursions.Add(ExcursionMapper.ToEntity(ex));
+            }
             return new RoutePoint(RoutePoint.Id, RoutePoint.Name, RoutePoint.StayDuration, 
-                RoutePoint.HotelName, RoutePoint.HotelClass,
-                (List<IExcursion>)RoutePoint.Excursions.Select(x => ExcursionMapper.ToEntity(x)));
+                RoutePoint.HotelName, RoutePoint.HotelClass, excursions);
         }
     }
 }

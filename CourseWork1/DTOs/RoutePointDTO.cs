@@ -10,5 +10,9 @@ namespace CourseWork1.DTOs
         public string HotelName { get; set; }
         public int HotelClass { get; set; }
         public List<ExcursionDTO> Excursions { get; set; }
+        public override string ToString()
+        {
+            return $"{Id} {Name} {StayDuration} {HotelName} {HotelClass}";
+        }
     }
 }

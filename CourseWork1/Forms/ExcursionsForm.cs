@@ -2,14 +2,7 @@
 using CourseWork1.Views;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CourseWork1.Forms
 {
@@ -55,7 +48,9 @@ namespace CourseWork1.Forms
             ExcursionsDataGridView.Rows.Clear();
             foreach (ExcursionDTO Excursion in Excursions)
             {
-                int index = ExcursionsDataGridView.Rows.Add(Excursion.ToString().Split(' '));
+                int index = ExcursionsDataGridView.Rows.Add();
+                ExcursionsDataGridView.Rows[index].Cells["Id"].Value = Excursion.Id;
+                ExcursionsDataGridView.Rows[index].Cells["ExName"].Value = Excursion.Name;
                 ExcursionsDataGridView.Rows[index].Tag = Excursion;
             }
             ExcursionsDataGridView_SelectionChanged(this, EventArgs.Empty);

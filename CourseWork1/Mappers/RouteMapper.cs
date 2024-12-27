@@ -8,19 +8,28 @@ namespace CourseWork1.Mappers
     {
         public static RouteDTO ToDTO(IRoute Route)
         {
+            List<RoutePointDTO> pointsDtos = new List<RoutePointDTO>();
+            foreach (IRoutePoint point in Route.Points)
+            {
+                pointsDtos.Add(RoutePointMapper.ToDTO(point));
+            }
             return new RouteDTO()
             {
                 Id = Route.Id,
                 Name = Route.Name,
                 Country = Route.Country,
                 Duration = Route.Duration,
-                Points = (List<RoutePointDTO>)Route.Points.Select(x => RoutePointMapper.ToDTO(x)),
+                Points = pointsDtos,
             };
         }
         public static IRoute ToEntity(RouteDTO Route)
         {
-            return new Route(Route.Id, Route.Name, Route.Country, Route.Duration,
-                (List<IRoutePoint>)Route.Points.Select(x => RoutePointMapper.ToEntity(x)));
+            List<IRoutePoint> points = new List<IRoutePoint>();
+            foreach (RoutePointDTO point in Route.Points)
+            {
+                points.Add(RoutePointMapper.ToEntity(point));
+            }
+            return new Route(Route.Id, Route.Name, Route.Country, Route.Duration, points);
         }
     }
 }

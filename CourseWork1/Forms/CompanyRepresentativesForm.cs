@@ -37,7 +37,13 @@ namespace CourseWork1.Forms
             RepresentativesDataGridView.Rows.Clear();
             foreach (CompanyRepresentativeDTO CompanyRepresentative in CompanyRepresentatives)
             {
-                int index = RepresentativesDataGridView.Rows.Add(CompanyRepresentative.ToString().Split(' '));
+                int index = RepresentativesDataGridView.Rows.Add();
+                RepresentativesDataGridView.Rows[index].Cells["Id"].Value = CompanyRepresentative.Id;
+                RepresentativesDataGridView.Rows[index].Cells["LastName"].Value = CompanyRepresentative.LastName;
+                RepresentativesDataGridView.Rows[index].Cells["FirstName"].Value = CompanyRepresentative.FirstName;
+                RepresentativesDataGridView.Rows[index].Cells["Patronymic"].Value = CompanyRepresentative.Patronymic;
+                RepresentativesDataGridView.Rows[index].Cells["Number"].Value = CompanyRepresentative.Number;
+                RepresentativesDataGridView.Rows[index].Cells["Email"].Value = CompanyRepresentative.Email;
                 RepresentativesDataGridView.Rows[index].Tag = CompanyRepresentative;
             }
         }

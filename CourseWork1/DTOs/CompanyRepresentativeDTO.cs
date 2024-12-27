@@ -12,5 +12,9 @@
         {
             return $"{Id} {LastName} {FirstName} {Patronymic} {Number} {Email}";
         }
+        public string GetName()
+        {
+            return $"{LastName} {FirstName} {Patronymic}";
+        }
     }
 }

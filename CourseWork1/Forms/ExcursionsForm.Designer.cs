@@ -158,16 +158,14 @@ namespace CourseWork1.Forms
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Id.Width = 25;
+            this.Id.Width = 44;
             // 
             // ExName
             // 
             this.ExName.HeaderText = "Название";
             this.ExName.Name = "ExName";
             this.ExName.ReadOnly = true;
-            this.ExName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ExName.Width = 78;
+            this.ExName.Width = 97;
             // 
             // ExcursionsForm
             // 

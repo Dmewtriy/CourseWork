@@ -9,6 +9,11 @@ namespace CourseWork1.Mappers
     {
         public static TripDTO ToDTO(ITrip Trip)
         {
+            List<ClientDTO> tourists = new List<ClientDTO>();
+            foreach(IClient client in Trip.Tourists)
+            {
+                tourists.Add(ClientMapper.ToDTO(client));
+            }
             return new TripDTO()
             {
                 Id = Trip.Id,
@@ -18,16 +23,19 @@ namespace CourseWork1.Mappers
                 StartDate = Trip.StartDate,
                 EndDate = Trip.EndDate,
                 TouristNumber = Trip.TouristNumber,
-                Tourists = (List<ClientDTO>)Trip.Tourists.Select(t => ClientMapper.ToDTO(t)),
+                Tourists = tourists,
                 Penalty = Trip.Penalty,
             };
         }
         public static ITrip ToEntity(TripDTO trip)
         {
+            List<IClient> tourists = new List<IClient>();
+            foreach (ClientDTO client in trip.Tourists)
+            {
+                tourists.Add(ClientMapper.ToEntity(client));
+            }
             return new Trip(trip.Id, trip.RouteName, CompanyRepresentativeMapper.ToEntity(trip.Representative), 
-                trip.Price, trip.StartDate, trip.EndDate,
-                trip.TouristNumber, (List<IClient>)trip.Tourists.Select(t => ClientMapper.ToEntity(t)), 
-                trip.Penalty);
+                trip.Price, trip.StartDate, trip.EndDate, trip.TouristNumber, tourists, trip.Penalty);
         }
     }
 }

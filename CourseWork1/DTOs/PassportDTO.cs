@@ -8,5 +8,9 @@ namespace CourseWork1.DTOs
         public string Number { get; set; }
         public DateTime IssuedDate{ get; set; }
         public string IssuedBy{ get; set; }
+        public override string ToString()
+        {
+            return $"{Series} {Number}";
+        }
     }
 }

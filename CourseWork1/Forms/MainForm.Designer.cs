@@ -40,7 +40,7 @@
             // 
             this.ClientsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ClientsButton.Location = new System.Drawing.Point(145, 137);
-            this.ClientsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientsButton.Margin = new System.Windows.Forms.Padding(4);
             this.ClientsButton.Name = "ClientsButton";
             this.ClientsButton.Size = new System.Drawing.Size(139, 57);
             this.ClientsButton.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.CompanyRepresentativesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CompanyRepresentativesButton.Location = new System.Drawing.Point(368, 137);
-            this.CompanyRepresentativesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CompanyRepresentativesButton.Margin = new System.Windows.Forms.Padding(4);
             this.CompanyRepresentativesButton.Name = "CompanyRepresentativesButton";
             this.CompanyRepresentativesButton.Size = new System.Drawing.Size(164, 57);
             this.CompanyRepresentativesButton.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             this.ExcursionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ExcursionsButton.Location = new System.Drawing.Point(384, 249);
-            this.ExcursionsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExcursionsButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExcursionsButton.Name = "ExcursionsButton";
             this.ExcursionsButton.Size = new System.Drawing.Size(139, 57);
             this.ExcursionsButton.TabIndex = 0;
@@ -76,7 +76,7 @@
             // 
             this.PointsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PointsButton.Location = new System.Drawing.Point(610, 137);
-            this.PointsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PointsButton.Margin = new System.Windows.Forms.Padding(4);
             this.PointsButton.Name = "PointsButton";
             this.PointsButton.Size = new System.Drawing.Size(139, 57);
             this.PointsButton.TabIndex = 0;
@@ -88,7 +88,7 @@
             // 
             this.RoutesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RoutesButton.Location = new System.Drawing.Point(145, 249);
-            this.RoutesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RoutesButton.Margin = new System.Windows.Forms.Padding(4);
             this.RoutesButton.Name = "RoutesButton";
             this.RoutesButton.Size = new System.Drawing.Size(139, 57);
             this.RoutesButton.TabIndex = 0;
@@ -100,7 +100,7 @@
             // 
             this.TripsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TripsButton.Location = new System.Drawing.Point(610, 249);
-            this.TripsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TripsButton.Margin = new System.Windows.Forms.Padding(4);
             this.TripsButton.Name = "TripsButton";
             this.TripsButton.Size = new System.Drawing.Size(139, 57);
             this.TripsButton.TabIndex = 0;
@@ -120,9 +120,9 @@
             this.Controls.Add(this.CompanyRepresentativesButton);
             this.Controls.Add(this.ClientsButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Главная форма";
             this.ResumeLayout(false);
 
         }

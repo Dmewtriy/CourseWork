@@ -33,18 +33,18 @@ namespace CourseWork1.Forms
         private void InitializeComponent()
         {
             this.RepresentativesDataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Patronymic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonAdd = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.IdTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Patronymic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.RepresentativesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@ namespace CourseWork1.Forms
             this.Number,
             this.Email});
             this.RepresentativesDataGridView.Location = new System.Drawing.Point(16, 27);
-            this.RepresentativesDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RepresentativesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.RepresentativesDataGridView.MultiSelect = false;
             this.RepresentativesDataGridView.Name = "RepresentativesDataGridView";
             this.RepresentativesDataGridView.ReadOnly = true;
@@ -71,58 +71,10 @@ namespace CourseWork1.Forms
             this.RepresentativesDataGridView.Size = new System.Drawing.Size(883, 185);
             this.RepresentativesDataGridView.TabIndex = 0;
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Id.Width = 25;
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Фамилия";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            this.LastName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.LastName.Width = 76;
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "Имя";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
-            this.FirstName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.FirstName.Width = 41;
-            // 
-            // Patronymic
-            // 
-            this.Patronymic.HeaderText = "Отчество";
-            this.Patronymic.Name = "Patronymic";
-            this.Patronymic.ReadOnly = true;
-            this.Patronymic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Patronymic.Width = 77;
-            // 
-            // Number
-            // 
-            this.Number.HeaderText = "Номер телефона";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Number.Width = 114;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Почта";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Email.Width = 55;
-            // 
             // ButtonAdd
             // 
             this.ButtonAdd.Location = new System.Drawing.Point(51, 454);
-            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(131, 63);
             this.ButtonAdd.TabIndex = 1;
@@ -133,7 +85,7 @@ namespace CourseWork1.Forms
             // EditButton
             // 
             this.EditButton.Location = new System.Drawing.Point(189, 454);
-            this.EditButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(131, 63);
             this.EditButton.TabIndex = 1;
@@ -144,7 +96,7 @@ namespace CourseWork1.Forms
             // DeleteButton
             // 
             this.DeleteButton.Location = new System.Drawing.Point(328, 454);
-            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(131, 63);
             this.DeleteButton.TabIndex = 1;
@@ -155,18 +107,17 @@ namespace CourseWork1.Forms
             // RefreshButton
             // 
             this.RefreshButton.Location = new System.Drawing.Point(467, 454);
-            this.RefreshButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RefreshButton.Margin = new System.Windows.Forms.Padding(4);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(131, 63);
             this.RefreshButton.TabIndex = 1;
             this.RefreshButton.Text = "Обновить список";
             this.RefreshButton.UseVisualStyleBackColor = true;
-            this.RefreshButton.Click += LoadCompanyRepresentatives;
             // 
             // IdTextBox
             // 
             this.IdTextBox.Location = new System.Drawing.Point(712, 454);
-            this.IdTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IdTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.Size = new System.Drawing.Size(185, 23);
             this.IdTextBox.TabIndex = 2;
@@ -175,13 +126,55 @@ namespace CourseWork1.Forms
             // SearchButton
             // 
             this.SearchButton.Location = new System.Drawing.Point(712, 487);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(187, 28);
             this.SearchButton.TabIndex = 3;
             this.SearchButton.Text = "Поиск по id";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButtonClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 44;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Фамилия";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            this.LastName.Width = 95;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "Имя";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            this.FirstName.Width = 60;
+            // 
+            // Patronymic
+            // 
+            this.Patronymic.HeaderText = "Отчество";
+            this.Patronymic.Name = "Patronymic";
+            this.Patronymic.ReadOnly = true;
+            this.Patronymic.Width = 96;
+            // 
+            // Number
+            // 
+            this.Number.HeaderText = "Номер телефона";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Width = 133;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Почта";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 74;
             // 
             // CompanyRepresentativesForm
             // 
@@ -196,7 +189,7 @@ namespace CourseWork1.Forms
             this.Controls.Add(this.ButtonAdd);
             this.Controls.Add(this.RepresentativesDataGridView);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CompanyRepresentativesForm";
             this.Text = "Представители компании";
             ((System.ComponentModel.ISupportInitialize)(this.RepresentativesDataGridView)).EndInit();
@@ -266,17 +259,17 @@ namespace CourseWork1.Forms
         #endregion
 
         private System.Windows.Forms.DataGridView RepresentativesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Patronymic;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.Button ButtonAdd;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.TextBox IdTextBox;
         private System.Windows.Forms.Button SearchButton;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn FirstName;
+        private DataGridViewTextBoxColumn Patronymic;
+        private DataGridViewTextBoxColumn Number;
+        private DataGridViewTextBoxColumn Email;
     }
 }

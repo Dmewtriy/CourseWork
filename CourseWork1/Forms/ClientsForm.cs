@@ -44,7 +44,13 @@ namespace CourseWork1.Forms
             clientsDataGridView.Rows.Clear();
             foreach (ClientDTO client in clients)
             {
-                int index = clientsDataGridView.Rows.Add(client.ToString().Split(' '));
+                int index = clientsDataGridView.Rows.Add();
+                clientsDataGridView.Rows[index].Cells["Id"].Value = client.Id;
+                clientsDataGridView.Rows[index].Cells["Фамилия"].Value = client.LastName;
+                clientsDataGridView.Rows[index].Cells["Имя"].Value = client.FirstName;
+                clientsDataGridView.Rows[index].Cells["Отчество"].Value = client.Patronymic;
+                clientsDataGridView.Rows[index].Cells["Дата рождения"].Value = client.DateOfBirth.ToShortDateString();
+                clientsDataGridView.Rows[index].Cells["Паспорт"].Value = client.PassportData.ToString();
                 clientsDataGridView.Rows[index].Tag = client;
             }
             ClientsDataGridView_SelectionChanged(this, EventArgs.Empty);
