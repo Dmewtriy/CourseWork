@@ -23,12 +23,12 @@ namespace CourseWork1.Forms
             foreach (var client in availableRouteClients)
             {
                 int index = ClientsDataGridView.Rows.Add();
-                ClientsDataGridView.Rows[index].Cells[1].Value = client.Id;
-                ClientsDataGridView.Rows[index].Cells[2].Value = client.LastName;
-                ClientsDataGridView.Rows[index].Cells[3].Value = client.FirstName;
-                ClientsDataGridView.Rows[index].Cells[4].Value = client.Patronymic;
-                ClientsDataGridView.Rows[index].Cells[5].Value = client.DateOfBirth.ToShortDateString();
-                ClientsDataGridView.Rows[index].Cells[6].Value = client.PassportData.ToString();
+                ClientsDataGridView.Rows[index].Cells["idColumn"].Value = client.Id;
+                ClientsDataGridView.Rows[index].Cells["LastNameColumn"].Value = client.LastName;
+                ClientsDataGridView.Rows[index].Cells["FirstNameColumn"].Value = client.FirstName;
+                ClientsDataGridView.Rows[index].Cells["PatronymicColumn"].Value = client.Patronymic;
+                ClientsDataGridView.Rows[index].Cells["BirthDateColumn"].Value = client.DateOfBirth.ToShortDateString();
+                ClientsDataGridView.Rows[index].Cells["PassportColumn"].Value = client.PassportData.ToString();
                 ClientsDataGridView.Rows[index].Tag = client;
             }
         }
@@ -47,7 +47,7 @@ namespace CourseWork1.Forms
 
             var idColumn = new DataGridViewTextBoxColumn
             {
-                Name = "ClientId",
+                Name = "idColumn",
                 HeaderText = "ID",
                 ReadOnly = true,
             };
@@ -55,7 +55,7 @@ namespace CourseWork1.Forms
 
             var LastNameColumn = new DataGridViewTextBoxColumn
             {
-                Name = "ClientLastName",
+                Name = "LastNameColumn",
                 HeaderText = "Фамилия",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
                 ReadOnly = true,
@@ -64,36 +64,36 @@ namespace CourseWork1.Forms
 
             var FirstNameColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "ClientFirstName",
-                Name = "Имя",
+                HeaderText = "Имя",
+                Name = "FirstNameColumn",
                 ReadOnly = true
             };
             ClientsDataGridView.Columns.Add(FirstNameColumn);
 
             var PatronymicColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "ClientPatronymic",
-                Name = "Отчество",
+                HeaderText = "Отчество",
+                Name = "PatronymicColumn",
                 ReadOnly = true
             };
             ClientsDataGridView.Columns.Add(PatronymicColumn);
 
             var BirthDateColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "ClientBirthDate",
-                Name = "Дата рождения",
+                HeaderText = "Дата рождения",
+                Name = "BirthDateColumn",
                 ReadOnly = true
             };
             ClientsDataGridView.Columns.Add(BirthDateColumn);
 
             var PassportColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "ClientPassport",
-                Name = "Паспорт",
+                HeaderText = "Паспорт",
+                Name = "PassportColumn",
                 ReadOnly = true
             };
             ClientsDataGridView.Columns.Add(PassportColumn);
-
+            ClientsDataGridView.AutoSize = true;
         }
 
         private void ConfirmButton_Click(object sender, EventArgs e)
